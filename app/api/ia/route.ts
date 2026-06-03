@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
 
   // 1. Essayer Ollama en local
   const ollamaUrl = process.env.OLLAMA_URL || "http://localhost:11434";
-  const ollamaModel = process.env.OLLAMA_MODEL || "qwen3:4b";
+  const ollamaModel = process.env.OLLAMA_MODEL || "qwen3-vl:30b";
 
   try {
     const ollamaRes = await fetch(`${ollamaUrl}/api/generate`, {
@@ -70,6 +70,7 @@ export async function POST(req: NextRequest) {
   // 2. Fallback API externe (Mistral compatible)
   const externalUrl = process.env.EXTERNAL_API_URL;
   const externalKey = process.env.EXTERNAL_API_KEY;
+  const externalModel = process.env.EXTERNAL_API_MODEL || "mistral-medium-latest";
 
   if (!externalUrl || !externalKey) {
     return NextResponse.json(
@@ -90,13 +91,13 @@ export async function POST(req: NextRequest) {
         Authorization: `Bearer ${externalKey}`,
       },
       body: JSON.stringify({
-        model: "mistral-small-latest",
+        model: externalModel,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
           { role: "user", content: fullPrompt },
         ],
-        temperature: 0.1,
-        max_tokens: 800,
+        temperature: 0.0,
+        max_tokens: 1200,
       }),
     });
 
