@@ -1,0 +1,544 @@
+{
+  "exercices": [
+    {
+      "id": "suites-01",
+      "notion": "Suites numériques",
+      "domaine": "Analyse",
+      "chapitre": "suites-numeriques",
+      "titre": "Suivi de patients",
+      "difficulte": 1,
+      "question": "Une association suit le nombre de patients pris en charge chaque mois. En janvier (mois 0), elle en prend en charge 50. Chaque mois, elle en prend en charge 8 de plus que le mois précédent. Combien de patients seront pris en charge en avril (mois 3) ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 74,
+      "unite": "patients",
+      "aide": [
+        "C'est une suite arithmétique. Le premier terme $u_0 = 50$ et la raison $r = 8$.",
+        "La formule est : $u_n = u_0 + n \\\times r$.",
+        "Avril correspond au mois 3, donc calcule $u_3 = 50 + 3 \\\times 8$."
+      ],
+      "correction": "On a une suite arithmétique avec $u_0 = 50$ et $r = 8$. La formule explicite est $u_n = 50 + 8n$. Pour avril (mois 3) : $u_3 = 50 + 3 \\\times 8 = 50 + 24 = 74$. Il y aura 74 patients pris en charge en avril.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Suites numériques"
+    },
+    {
+      "id": "suites-02",
+      "notion": "Suites numériques",
+      "domaine": "Analyse",
+      "chapitre": "suites-numeriques",
+      "titre": "Demi-vie d'un médicament",
+      "difficulte": 2,
+      "question": "Un médicament se décompose dans l'organisme : chaque heure, il en reste 60% de la quantité présente une heure avant. Au départ, on injecte 200 mg. Quelle quantité reste-t-il après 3 heures ? (arrondir à l'unité)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 43,
+      "unite": "mg",
+      "aide": [
+        "C'est une suite géométrique. Le premier terme $u_0 = 200$ et la raison $q = 0,6$.",
+        "La formule est : $u_n = u_0 \\\times q^n$.",
+        "Calcule $u_3 = 200 \\\times 0,6^3 = 200 \\\times 0,216$."
+      ],
+      "correction": "On a une suite géométrique avec $u_0 = 200$ et $q = 0,6$. Après 3 heures : $u_3 = 200 \\\times 0,6^3 = 200 \\\times 0,216 = 43,2$. Arrondi à l'unité : 43 mg restent après 3 heures.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Suites numériques"
+    },
+    {
+      "id": "suites-03",
+      "notion": "Suites numériques",
+      "domaine": "Analyse",
+      "chapitre": "suites-numeriques",
+      "titre": "Budget de soins",
+      "difficulte": 2,
+      "question": "Le budget d'un centre de soins augmente de 5% chaque année. Cette année (année 0), le budget est de 80 000 €. Quel sera le budget dans 2 ans ? (arrondir à l'euro)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 88200,
+      "unite": "€",
+      "aide": [
+        "Augmenter de 5% revient à multiplier par $1 + \\frac{5}{100} = 1,05$.",
+        "C'est une suite géométrique de raison $q = 1,05$.",
+        "Calcule $u_2 = 80000 \\\times 1,05^2$."
+      ],
+      "correction": "Le taux multiplicateur est $1 + 0,05 = 1,05$. C'est une suite géométrique : $u_n = 80000 \\\times 1,05^n$. Dans 2 ans : $u_2 = 80000 \\\times 1,05^2 = 80000 \\\times 1,1025 = 88200$ €.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Suites numériques"
+    },
+    {
+      "id": "suites-04",
+      "notion": "Suites numériques",
+      "domaine": "Analyse",
+      "chapitre": "suites-numeriques",
+      "titre": "Évolutions successives",
+      "difficulte": 3,
+      "question": "Un salaire augmente de 3% puis de 4%. Quel est le taux global d'augmentation ? (arrondir au dixième)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 7.1,
+      "unite": "%",
+      "aide": [
+        "Le taux multiplicateur pour +3% est 1,03.",
+        "Le taux multiplicateur pour +4% est 1,04.",
+        "Le taux global est $1,03 \\\times 1,04$. Pour trouver le pourcentage, calcule $(1,03 \\\times 1,04 - 1) \\\times 100$."
+      ],
+      "correction": "Les taux multiplicateurs sont 1,03 et 1,04. Le taux global est $1,03 \\\times 1,04 = 1,0712$. Le taux d'augmentation global est $(1,0712 - 1) \\\times 100 = 7,12\\%$, soit environ 7,1% au dixième près.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Suites numériques"
+    },
+    {
+      "id": "suites-05",
+      "notion": "Suites numériques",
+      "domaine": "Analyse",
+      "chapitre": "suites-numeriques",
+      "titre": "Somme d'une suite arithmétique",
+      "difficulte": 2,
+      "question": "Un infirmier fait 12 visites à domicile la première semaine, 14 la deuxième, 16 la troisième, etc. (suite arithmétique). Combien de visites fait-il en 5 semaines au total ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 100,
+      "unite": "visites",
+      "aide": [
+        "C'est une suite arithmétique avec $u_1 = 12$ et $r = 2$.",
+        "Le 5ème terme est $u_5 = 12 + 4 \\\times 2 = 20$.",
+        "La somme des 5 termes est $S = 5 \\\times \\frac{12 + 20}{2}$."
+      ],
+      "correction": "Suite arithmétique : $u_1 = 12$, $r = 2$. Les termes sont 12, 14, 16, 18, 20. La somme est $S = 5 \\\times \\frac{12 + 20}{2} = 5 \\\times 16 = 100$. L'infirmier fait 100 visites en 5 semaines.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Suites numériques"
+    },
+    {
+      "id": "fonctions-01",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Concentration d'un médicament",
+      "difficulte": 1,
+      "question": "La concentration d'un médicament (en mg/L) en fonction du temps $t$ (en heures) est modélisée par $f(t) = -0,5t^2 + 4t + 2$. Quelle est la concentration après 2 heures ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 8,
+      "unite": "mg/L",
+      "aide": [
+        "Remplace $t$ par 2 dans la formule.",
+        "Calcule $f(2) = -0,5 \\\times 2^2 + 4 \\\times 2 + 2$.",
+        "$2^2 = 4$, donc $-0,5 \\\times 4 = -2$."
+      ],
+      "correction": "$f(2) = -0,5 \\\times 2^2 + 4 \\\times 2 + 2 = -0,5 \\\times 4 + 8 + 2 = -2 + 8 + 2 = 8$. La concentration après 2 heures est de 8 mg/L.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Fonctions"
+    },
+    {
+      "id": "fonctions-02",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Coût de production",
+      "difficulte": 2,
+      "question": "Le coût de production de $x$ médicaments (en €) est $C(x) = 0,01x^2 + 2x + 100$. Quel est le coût de production de 50 médicaments ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 225,
+      "unite": "€",
+      "aide": [
+        "Remplace $x$ par 50 dans $C(x) = 0,01x^2 + 2x + 100$.",
+        "Calcule $0,01 \\\times 50^2 = 0,01 \\\times 2500 = 25$.",
+        "Puis $2 \\\times 50 = 100$. Additionne le tout avec 100."
+      ],
+      "correction": "$C(50) = 0,01 \\\times 50^2 + 2 \\\times 50 + 100 = 0,01 \\\times 2500 + 100 + 100 = 25 + 100 + 100 = 225$. Le coût de production de 50 médicaments est de 225 €.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Fonctions"
+    },
+    {
+      "id": "fonctions-03",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Sommet de la parabole",
+      "difficulte": 3,
+      "question": "La fonction $f(x) = -2x^2 + 8x + 10$ modélise l'efficacité d'un traitement. Quelle est la valeur maximale de l'efficacité ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 18,
+      "unite": "",
+      "aide": [
+        "Pour $f(x) = ax^2 + bx + c$, le sommet a pour abscisse $x = -\\frac{b}{2a}$.",
+        "Ici $a = -2$ et $b = 8$, donc $x = -\\frac{8}{2 \\\times (-2)} = 2$.",
+        "Calcule $f(2) = -2 \\\times 2^2 + 8 \\\times 2 + 10$."
+      ],
+      "correction": "Le sommet de la parabole a pour abscisse $x = -\\frac{b}{2a} = -\\frac{8}{2 \\\times (-2)} = 2$. L'ordonnée maximale est $f(2) = -2 \\\times 4 + 16 + 10 = -8 + 16 + 10 = 18$. L'efficacité maximale est 18.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Fonctions"
+    },
+    {
+      "id": "fonctions-04",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Croissance exponentielle",
+      "difficulte": 2,
+      "question": "Le nombre de bactéries dans une culture est modélisé par $N(t) = 1000 \\\times e^{0,2t}$ où $t$ est en heures. Combien y a-t-il de bactéries après 5 heures ? (arrondir à l'unité)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 2718,
+      "unite": "bactéries",
+      "aide": [
+        "$e^{0,2 \\\times 5} = e^1$.",
+        "$e \\approx 2,718$.",
+        "Calcule $1000 \\\times e^1 \\approx 1000 \\\times 2,718$."
+      ],
+      "correction": "$N(5) = 1000 \\\times e^{0,2 \\\times 5} = 1000 \\\times e^1 = 1000 \\\times e \\approx 1000 \\\times 2,71828 = 2718,28$. Il y a environ 2718 bactéries après 5 heures.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Fonctions"
+    },
+    {
+      "id": "fonctions-05",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Résolution d'équation",
+      "difficulte": 3,
+      "question": "La concentration d'un médicament est $C(t) = -t^2 + 6t + 7$ (en mg/L). À quel moment $t$ la concentration est-elle de 15 mg/L ? (donner la plus petite valeur positive)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 2,
+      "unite": "heures",
+      "aide": [
+        "Résous $-t^2 + 6t + 7 = 15$.",
+        "Soit $-t^2 + 6t - 8 = 0$, ou $t^2 - 6t + 8 = 0$ en multipliant par -1.",
+        "Cherche deux nombres dont le produit est 8 et la somme est 6."
+      ],
+      "correction": "Résolvons $-t^2 + 6t + 7 = 15$. On obtient $-t^2 + 6t - 8 = 0$, soit $t^2 - 6t + 8 = 0$. Les racines de $t^2 - 6t + 8$ sont $t = 2$ et $t = 4$ (car $2 \\\times 4 = 8$ et $2 + 4 = 6$). La plus petite valeur positive est $t = 2$ heures.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Fonctions"
+    },
+    {
+      "id": "derivation-01",
+      "notion": "Dérivation",
+      "domaine": "Analyse",
+      "chapitre": "derivation",
+      "titre": "Dérivée simple",
+      "difficulte": 1,
+      "question": "Soit $f(x) = 3x^2 + 4x + 1$. Quelle est la dérivée $f'(x)$ ?",
+      "typeReponse": "texte",
+      "reponseAttendue": "6x+4",
+      "unite": "",
+      "aide": [
+        "La dérivée de $x^2$ est $2x$, donc celle de $3x^2$ est $3 \\\times 2x = 6x$.",
+        "La dérivée de $4x$ est $4$.",
+        "La dérivée d'une constante est 0."
+      ],
+      "correction": "$f'(x) = 3 \\\times 2x + 4 + 0 = 6x + 4$. La dérivée est $f'(x) = 6x + 4$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Dérivation"
+    },
+    {
+      "id": "derivation-02",
+      "notion": "Dérivation",
+      "domaine": "Analyse",
+      "chapitre": "derivation",
+      "titre": "Signe de la dérivée",
+      "difficulte": 2,
+      "question": "Soit $f(x) = x^2 - 6x + 5$. Pour quelles valeurs de $x$ la fonction $f$ est-elle décroissante ? (donner sous la forme d'un intervalle, ex: ]a;b[ )",
+      "typeReponse": "texte",
+      "reponseAttendue": "]-inf;3[",
+      "unite": "",
+      "aide": [
+        "Calcule $f'(x) = 2x - 6$.",
+        "La fonction est décroissante quand $f'(x) < 0$.",
+        "Résous $2x - 6 < 0$, donc $x < 3$."
+      ],
+      "correction": "$f'(x) = 2x - 6$. La fonction est décroissante quand $f'(x) < 0$, soit $2x - 6 < 0$, donc $x < 3$. L'intervalle est $]-\\\\infty; 3[$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Dérivation"
+    },
+    {
+      "id": "derivation-03",
+      "notion": "Dérivation",
+      "domaine": "Analyse",
+      "chapitre": "derivation",
+      "titre": "Tangente",
+      "difficulte": 2,
+      "question": "Soit $f(x) = x^2 + 2x + 3$. Quel est le coefficient directeur de la tangente à la courbe au point d'abscisse $x = 1$ ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 4,
+      "unite": "",
+      "aide": [
+        "Le coefficient directeur de la tangente en $x = a$ est $f'(a)$.",
+        "Calcule $f'(x) = 2x + 2$.",
+        "Puis $f'(1) = 2 \\\times 1 + 2 = 4$."
+      ],
+      "correction": "$f'(x) = 2x + 2$. Le coefficient directeur de la tangente en $x = 1$ est $f'(1) = 2 \\\times 1 + 2 = 4$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Dérivation"
+    },
+    {
+      "id": "derivation-04",
+      "notion": "Dérivation",
+      "domaine": "Analyse",
+      "chapitre": "derivation",
+      "titre": "Maximum d'une fonction",
+      "difficulte": 3,
+      "question": "Une entreprise produit des masques. Le bénéfice (en milliers d'€) pour $x$ milliers de masques produits est $B(x) = -0,5x^2 + 4x - 3$. Quelle production maximise le bénéfice ? (en milliers de masques)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 4,
+      "unite": "milliers de masques",
+      "aide": [
+        "Le maximum se trouve quand $B'(x) = 0$.",
+        "$B'(x) = -x + 4$.",
+        "Résous $-x + 4 = 0$, donc $x = 4$."
+      ],
+      "correction": "$B'(x) = -0,5 \\\times 2x + 4 = -x + 4$. $B'(x) = 0$ quand $x = 4$. Comme $a = -0,5 < 0$, c'est bien un maximum. La production qui maximise le bénéfice est 4 milliers de masques.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Dérivation"
+    },
+    {
+      "id": "statistique-01",
+      "notion": "Statistique",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "statistique",
+      "titre": "Moyenne simple",
+      "difficulte": 1,
+      "question": "Les temps d'attente (en minutes) de 5 patients aux urgences sont : 12, 8, 15, 10, 20. Quel est le temps d'attente moyen ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 13,
+      "unite": "minutes",
+      "aide": [
+        "La moyenne = somme des valeurs / nombre de valeurs.",
+        "Somme = 12 + 8 + 15 + 10 + 20 = 65.",
+        "Moyenne = 65 / 5 = 13."
+      ],
+      "correction": "Somme = $12 + 8 + 15 + 10 + 20 = 65$. Nombre de patients = 5. Moyenne = $65 / 5 = 13$ minutes.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Statistique"
+    },
+    {
+      "id": "statistique-02",
+      "notion": "Statistique",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "statistique",
+      "titre": "Médiane et quartiles",
+      "difficulte": 2,
+      "question": "Voici les âges de 7 patients : 23, 34, 45, 52, 61, 68, 75. Quelle est la médiane ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 52,
+      "unite": "ans",
+      "aide": [
+        "Les données sont déjà ordonnées.",
+        "Avec 7 valeurs, la médiane est la 4ème valeur.",
+        "Compte : 1→23, 2→34, 3→45, 4→52."
+      ],
+      "correction": "Les données sont ordonnées. Avec 7 valeurs, la médiane est la valeur centrale, c'est-à-dire la 4ème : 52 ans.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Statistique"
+    },
+    {
+      "id": "statistique-03",
+      "notion": "Statistique",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "statistique",
+      "titre": "Moyenne pondérée",
+      "difficulte": 2,
+      "question": "Dans un hôpital, la répartition du personnel est : 20 médecins (salaire moyen 4500 €), 50 soignants (2000 €), 30 administratifs (1800 €). Quel est le salaire moyen global ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 2440,
+      "unite": "€",
+      "aide": [
+        "Moyenne pondérée = somme des (effectif × valeur) / effectif total.",
+        "Somme = $20 \\\times 4500 + 50 \\\times 2000 + 30 \\\times 1800 = 90000 + 100000 + 54000 = 244000$.",
+        "Effectif total = $20 + 50 + 30 = 100$. Moyenne = $244000 / 100$."
+      ],
+      "correction": "Somme pondérée = $20 \\\times 4500 + 50 \\\times 2000 + 30 \\\times 1800 = 90000 + 100000 + 54000 = 244000$. Effectif total = 100. Moyenne = $244000 / 100 = 2440$ €.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Statistique"
+    },
+    {
+      "id": "statistique-04",
+      "notion": "Statistique",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "statistique",
+      "titre": "Écart interquartile",
+      "difficulte": 3,
+      "question": "Les notes de 8 élèves à un contrôle sont : 8, 9, 10, 12, 13, 14, 16, 18. Quel est l'écart interquartile ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 5.5,
+      "unite": "points",
+      "aide": [
+        "Q1 est la médiane de la première moitié (8, 9, 10, 12) : /2 = 9,5$.",
+        "Q3 est la médiane de la seconde moitié (13, 14, 16, 18) : /2 = 15$.",
+        "Écart interquartile = Q3 - Q1 =  - 9,5 = 5,5$."
+      ],
+      "correction": "Les données sont ordonnées. Avec 8 valeurs : Q1 est la médiane des 4 premières (8, 9, 10, 12) = /2 = 9,5$. Q3 est la médiane des 4 dernières (13, 14, 16, 18) = /2 = 15$. Écart interquartile =  - 9,5 = 5,5$ points.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Statistique"
+    },
+    {
+      "id": "statistique-05",
+      "notion": "Statistique",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "statistique",
+      "titre": "Comparaison de séries",
+      "difficulte": 2,
+      "question": "Groupe A (nouveau traitement) : moyenne = 72, écart-type = 5. Groupe B (ancien traitement) : moyenne = 68, écart-type = 12. Lequel des deux groupes a des résultats plus homogènes ?",
+      "typeReponse": "texte",
+      "reponseAttendue": "A",
+      "unite": "",
+      "aide": [
+        "L'homogénéité se mesure avec l'écart-type : plus il est petit, plus les valeurs sont proches de la moyenne.",
+        "Groupe A : écart-type = 5.",
+        "Groupe B : écart-type = 12."
+      ],
+      "correction": "L'écart-type mesure la dispersion. Plus l'écart-type est petit, plus les résultats sont homogènes. Le groupe A a un écart-type de 5 contre 12 pour le groupe B. Le groupe A est plus homogène.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Statistique"
+    },
+    {
+      "id": "probabilites-01",
+      "notion": "Probabilités conditionnelles",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "probabilites-conditionnelles",
+      "titre": "Probabilité conditionnelle simple",
+      "difficulte": 1,
+      "question": "Dans un centre de dépistage, 60% des personnes sont vaccinées. Parmi les vaccinées, 10% sont positives au test. Parmi les non vaccinées, 40% sont positives. Quelle est la probabilité qu'une personne soit positive sachant qu'elle est vaccinée ? (en %)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 10,
+      "unite": "%",
+      "aide": [
+        "On cherche $P_{vacciné}(positif)$.",
+        "C'est directement donné dans l'énoncé.",
+        "'Parmi les vaccinées, 10% sont positives' → probabilité = 10%."
+      ],
+      "correction": "La probabilité conditionnelle $P_{vacciné}(positif)$ est donnée directement : parmi les vaccinées, 10% sont positives. Donc $P_{vacciné}(positif) = 0,10 = 10\\%$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Probabilités conditionnelles"
+    },
+    {
+      "id": "probabilites-02",
+      "notion": "Probabilités conditionnelles",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "probabilites-conditionnelles",
+      "titre": "Probabilité totale",
+      "difficulte": 2,
+      "question": "Dans un hôpital, 30% des patients ont une complication. Parmi ceux qui ont une complication, 80% ont suivi le protocole A. Parmi ceux qui n'ont pas de complication, 50% ont suivi le protocole A. Quelle est la probabilité qu'un patient pris au hasard ait suivi le protocole A ? (en %)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 59,
+      "unite": "%",
+      "aide": [
+        "Utilise la formule des probabilités totales.",
+        "$P(A) = P(A \\cap C) + P(A \\cap \\bar{C})$.",
+        "$P(A \\cap C) = P(C) \\\times P_C(A) = 0,30 \\\times 0,80 = 0,24$. $P(A \\cap \\bar{C}) = 0,70 \\\times 0,50 = 0,35$. Total = $0,24 + 0,35 = 0,59$."
+      ],
+      "correction": "Par la formule des probabilités totales : $P(A) = P(C) \\\times P_C(A) + P(\\bar{C}) \\\times P_{\\bar{C}}(A) = 0,30 \\\times 0,80 + 0,70 \\\times 0,50 = 0,24 + 0,35 = 0,59 = 59\\%$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Probabilités conditionnelles"
+    },
+    {
+      "id": "probabilites-03",
+      "notion": "Probabilités conditionnelles",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "probabilites-conditionnelles",
+      "titre": "Tableau de contingence",
+      "difficulte": 2,
+      "question": "Dans une population de 200 personnes : 120 sont vaccinées, dont 30 sont positives au test. Parmi les non vaccinées, 50 sont positives. Quelle est la probabilité qu'une personne positive soit vaccinée ? (en %, arrondir à l'unité)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 38,
+      "unite": "%",
+      "aide": [
+        "Construis le tableau : Vaccinés/Positifs = 30, Vaccinés/Négatifs = 90, Non vaccinés/Positifs = 50, Non vaccinés/Négatifs = 30.",
+        "Total positifs = $30 + 50 = 80$.",
+        "$P_{positif}(vacciné) = 30 / 80 = 0,375 = 37,5\\%$, arrondi à 38%."
+      ],
+      "correction": "Tableau de contingence : Vaccinés/Positifs = 30, Non vaccinés/Positifs = 50. Total positifs = 80. La probabilité conditionnelle est $30 / 80 = 0,375 = 37,5\\%$, soit environ 38%.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Probabilités conditionnelles"
+    },
+    {
+      "id": "probabilites-04",
+      "notion": "Probabilités conditionnelles",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "probabilites-conditionnelles",
+      "titre": "Indépendance",
+      "difficulte": 3,
+      "question": "Dans une étude, P(maladie) = 0,1 et P(fumeur) = 0,3. Si P(maladie ∩ fumeur) = 0,05, les événements sont-ils indépendants ? Réponds par 'Oui' ou 'Non'.",
+      "typeReponse": "texte",
+      "reponseAttendue": "Non",
+      "unite": "",
+      "aide": [
+        "Deux événements sont indépendants si $P(A \\cap B) = P(A) \\\times P(B)$.",
+        "Calcule $P(maladie) \\\times P(fumeur) = 0,1 \\\times 0,3 = 0,03$.",
+        "$P(maladie \\cap fumeur) = 0,05 \\neq 0,03$. Donc ils ne sont pas indépendants."
+      ],
+      "correction": "Pour l'indépendance, on vérifie si $P(maladie \\cap fumeur) = P(maladie) \\\times P(fumeur)$. $0,1 \\\times 0,3 = 0,03$, mais $P(maladie \\cap fumeur) = 0,05$. Comme $0,05 \\neq 0,03$, les événements ne sont pas indépendants. Réponse : Non.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Probabilités conditionnelles"
+    },
+    {
+      "id": "bernoulli-01",
+      "notion": "Épreuves de Bernoulli et variables aléatoires",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "bernoulli-variables-aleatoires",
+      "titre": "Loi de Bernoulli",
+      "difficulte": 1,
+      "question": "Un médicament est efficace avec une probabilité de 0,7. On définit X = 1 si efficace, X = 0 sinon. Quelle est l'espérance de X ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 0.7,
+      "unite": "",
+      "aide": [
+        "X suit une loi de Bernoulli de paramètre $p = 0,7$.",
+        "L'espérance d'une loi de Bernoulli est $E(X) = p$.",
+        "Donc $E(X) = 0,7$."
+      ],
+      "correction": "X suit une loi de Bernoulli de paramètre $p = 0,7$. L'espérance est $E(X) = p = 0,7$. Cela signifie qu'en moyenne, sur un grand nombre de patients, le médicament sera efficace dans 70% des cas.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Bernoulli"
+    },
+    {
+      "id": "bernoulli-02",
+      "notion": "Épreuves de Bernoulli et variables aléatoires",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "bernoulli-variables-aleatoires",
+      "titre": "Schéma de Bernoulli",
+      "difficulte": 2,
+      "question": "Un vaccin protège avec une probabilité de 0,8. On vaccine 3 personnes indépendamment. Quelle est la probabilité qu'exactement 2 personnes soient protégées ? (arrondir au centième)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 0.38,
+      "unite": "",
+      "aide": [
+        "C'est un schéma de Bernoulli avec $n = 3$ et $p = 0,8$.",
+        "Les chemins avec exactement 2 succès : SSP, SPS, PSS (où S = protégé, P = non protégé).",
+        "Chaque chemin a pour probabilité $0,8^2 \\\times 0,2 = 0,128$. Il y a 3 chemins, donc $3 \\\times 0,128 = 0,384$."
+      ],
+      "correction": "Schéma de Bernoulli ($n=3$, $p=0,8$). Les chemins avec exactement 2 succès sont SSP, SPS, PSS. Chacun a pour probabilité $0,8^2 \\\times 0,2 = 0,128$. Avec 3 chemins : $3 \\\times 0,128 = 0,384$, soit environ 0,38.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Bernoulli"
+    },
+    {
+      "id": "bernoulli-03",
+      "notion": "Épreuves de Bernoulli et variables aléatoires",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "bernoulli-variables-aleatoires",
+      "titre": "Espérance d'une variable aléatoire",
+      "difficulte": 2,
+      "question": "Une variable aléatoire X prend les valeurs 1, 2, 5 avec les probabilités 0,5, 0,3, 0,2. Quelle est l'espérance de X ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 2.1,
+      "unite": "",
+      "aide": [
+        "$E(X) = \\sum x_i \\\times P(X=x_i)$.",
+        "Calcule $1 \\\times 0,5 + 2 \\\times 0,3 + 5 \\\times 0,2$.",
+        "$0,5 + 0,6 + 1,0 = 2,1$."
+      ],
+      "correction": "$E(X) = 1 \\\times 0,5 + 2 \\\times 0,3 + 5 \\\times 0,2 = 0,5 + 0,6 + 1,0 = 2,1$. L'espérance de X est 2,1.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Bernoulli"
+    },
+    {
+      "id": "bernoulli-04",
+      "notion": "Épreuves de Bernoulli et variables aléatoires",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "bernoulli-variables-aleatoires",
+      "titre": "Loi binomiale",
+      "difficulte": 3,
+      "question": "Une maladie touche 10% de la population. On choisit 4 personnes au hasard. Quelle est la probabilité qu'au moins une personne soit malade ? (arrondir au centième)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 0.34,
+      "unite": "",
+      "aide": [
+        "'Au moins une' = 1 - 'aucune'.",
+        "P(aucune) = $0,9^4$ (tous non malades).",
+        "$0,9^4 = 0,6561$. Donc $1 - 0,6561 = 0,3439$."
+      ],
+      "correction": "P(au moins une malade) = 1 - P(aucune malade) = $1 - 0,9^4 = 1 - 0,6561 = 0,3439$, soit environ 0,34.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour le programme ST2S – Bernoulli"
+    }
+  ]
+}

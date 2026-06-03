@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: #fdf8f0;
+  --color-slate: #3d405b;
+  --color-slate-light: #6b6e85;
+  --color-terracotta: #e07a5f;
+  --color-terracotta-dark: #c46248;
+  --color-sage: #81b29a;
+  --color-sage-dark: #5e8f76;
+  --color-warm-yellow: #f2cc8f;
+  --color-warm-yellow-dark: #d4a85e;
+  --color-border: #eae3d9;
+  --color-card: #ffffff;
+  --color-card-hover: #fffdfa;
+
+  --font-display: var(--font-dm-serif);
+  --font-body: var(--font-work-sans);
+  --font-mono: var(--font-jetbrains-mono);
+
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+  --animate-fade-in: fade-in 0.4s ease-out forwards;
+  --animate-slide-in-right: slide-in-right 0.4s ease-out forwards;
+  --animate-bounce-soft: bounce-soft 2s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-slate);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-terracotta);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background-color: var(--color-warm-yellow);
+  color: var(--color-slate);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta);
+}

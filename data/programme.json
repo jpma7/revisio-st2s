@@ -1,0 +1,156 @@
+{
+  "programme": {
+    "titre": "Mathématiques – 1re ST2S",
+    "source": "Programme officiel de l'enseignement de mathématiques en classe de première de la série ST2S (B.O. spécial n° 6 du 5 août 2021)",
+    "domaines": [
+      {
+        "titre": "Analyse",
+        "chapitres": [
+          {
+            "id": "suites-numeriques",
+            "titre": "Chapitre 1 – Suites numériques",
+            "competences": [
+              "Modéliser une situation avec une suite arithmétique ou géométrique",
+              "Représenter graphiquement une suite",
+              "Calculer un terme à partir de la formule explicite ou de la relation de récurrence",
+              "Déterminer la somme des termes consécutifs d'une suite arithmétique ou géométrique",
+              "Résoudre des problèmes de pourcentages d'évolution (taux multiplicateur, évolutions successives)"
+            ],
+            "notions_cles": [
+              "Suite arithmétique : définition, formule explicite $u_n = u_0 + n \\\times r$, somme $S = (n+1) \\\times \\frac{u_0 + u_n}{2}$",
+              "Suite géométrique : définition, formule explicite $u_n = u_0 \\\times q^n$, somme $S = u_0 \\\times \\frac{1 - q^{n+1}}{1 - q}$",
+              "Taux multiplicateur : augmentation de $t\\%$ → $\\\times (1 + \\frac{t}{100})$, diminution → $\\\times (1 - \\frac{t}{100})$",
+              "Évolutions successives : multiplier les taux multiplicateurs"
+            ],
+            "exemples_st2s": [
+              "Évolution d'une population de patients suivis dans le temps",
+              "Calcul d'un médicament éliminé par le corps à chaque prise (demi-vie)",
+              "Progression d'un budget de soins sur plusieurs années"
+            ]
+          },
+          {
+            "id": "fonctions-variable-reelle",
+            "titre": "Chapitre 2 – Fonctions de la variable réelle",
+            "competences": [
+              "Modéliser une situation avec une fonction polynôme du second degré ou une fonction exponentielle",
+              "Étudier le sens de variation d'une fonction à partir de sa représentation graphique",
+              "Déterminer graphiquement un maximum ou un minimum",
+              "Résoudre graphiquement et algébriquement une équation ou une inéquation",
+              "Interpréter les résultats dans le contexte de la situation étudiée"
+            ],
+            "notions_cles": [
+              "Fonction polynôme du second degré : $f(x) = ax^2 + bx + c$, parabole, sommet",
+              "Fonction exponentielle : $f(x) = e^x$, croissante, $e^0 = 1$",
+              "Sens de variation : croissante, décroissante, constante sur un intervalle",
+              "Maximum/minimum : valeur la plus grande/la plus petite atteinte",
+              "Signe d'une fonction : où la courbe est au-dessus/en-dessous de l'axe des abscisses"
+            ],
+            "exemples_st2s": [
+              "Concentration d'un médicament dans le sang en fonction du temps",
+              "Coût de production en fonction de la quantité fabriquée",
+              "Évolution d'une épidémie (modèle exponentiel)"
+            ]
+          },
+          {
+            "id": "derivation",
+            "titre": "Chapitre 3 – Dérivation",
+            "competences": [
+              "Calculer la dérivée d'une fonction polynôme du second degré",
+              "Déterminer le signe de la dérivée pour en déduire les variations de la fonction",
+              "Déterminer l'équation de la tangente à une courbe en un point",
+              "Utiliser la dérivation pour déterminer un maximum ou un minimum dans un problème d'optimisation"
+            ],
+            "notions_cles": [
+              "Nombre dérivé en un point : coefficient directeur de la tangente",
+              "Fonction dérivée : $(u + v)' = u' + v'$, $(ku)' = ku'$, $(x^2)' = 2x$, $(e^x)' = e^x$",
+              "Signe de $f'$ et variations de $f$ : $f' > 0$ → $f$ croissante, $f' < 0$ → $f$ décroissante",
+              "Extremum : $f'$ s'annule en changeant de signe",
+              "Tangente : $y = f'(a)(x - a) + f(a)$"
+            ],
+            "exemples_st2s": [
+              "Recherche de la dose optimale d'un médicament (maximum d'efficacité)",
+              "Étude de la vitesse d'élimination d'une substance",
+              "Optimisation d'un planning de soins"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Statistiques et probabilités",
+        "chapitres": [
+          {
+            "id": "statistique",
+            "titre": "Chapitre 1 – Statistique",
+            "competences": [
+              "Analyser une série statistique à une variable : calculer et interpréter des indicateurs de position et de dispersion",
+              "Représenter des données sous forme de tableau, histogramme, boîte à moustaches",
+              "Calculer et interpréter la moyenne, la médiane, les quartiles, l'écart-type",
+              "Comparer des séries statistiques à l'aide d'indicateurs ou de représentations graphiques",
+              "Lire et interpréter des données présentées dans des tableurs ou des articles de presse"
+            ],
+            "notions_cles": [
+              "Moyenne : somme des valeurs / effectif total",
+              "Médiane : valeur qui partage la série en deux parties égales",
+              "Quartiles : Q1 (25%), Q2 = médiane (50%), Q3 (75%)",
+              "Écart interquartile : Q3 - Q1",
+              "Écart-type : mesure de la dispersion (calculatrice)",
+              "Boîte à moustaches : représentation graphique des quartiles"
+            ],
+            "exemples_st2s": [
+              "Analyse des temps d'attente aux urgences",
+              "Répartition des âges dans une population de patients",
+              "Comparaison des résultats de deux groupes de traitement"
+            ]
+          },
+          {
+            "id": "probabilites-conditionnelles",
+            "titre": "Chapitre 2 – Probabilités conditionnelles",
+            "competences": [
+              "Décrire un phénomène aléatoire à l'aide d'un arbre pondéré ou d'un tableau de contingence",
+              "Calculer des probabilités conditionnelles",
+              "Utiliser la formule des probabilités totales",
+              "Vérifier si deux événements sont indépendants",
+              "Interpréter les résultats dans un contexte sanitaire ou social"
+            ],
+            "notions_cles": [
+              "Probabilité conditionnelle : $P_B(A) = \\frac{P(A \\cap B)}{P(B)}$",
+              "Arbre pondéré : probabilités sur les branches, produit sur les chemins",
+              "Formule des probabilités totales : $P(A) = P(A \\cap B) + P(A \\cap \\bar{B})$",
+              "Événements indépendants : $P(A \\cap B) = P(A) \\\times P(B)$",
+              "Tableau de contingence : croisement de deux caractères"
+            ],
+            "exemples_st2s": [
+              "Probabilité qu'un patient ait une maladie sachant qu'il a un symptôme (dépistage)",
+              "Taux de réussite d'un traitement selon le groupe d'âge",
+              "Étude de la couverture vaccinale dans une population"
+            ]
+          },
+          {
+            "id": "bernoulli-variables-aleatoires",
+            "titre": "Chapitre 3 – Épreuves de Bernoulli et variables aléatoires",
+            "competences": [
+              "Reconnaître une épreuve de Bernoulli et une loi de Bernoulli",
+              "Modéliser une succession d'épreuves de Bernoulli identiques et indépendantes (schéma de Bernoulli)",
+              "Définir et représenter une variable aléatoire discrète",
+              "Calculer et interpréter l'espérance d'une variable aléatoire",
+              "Utiliser la calculatrice ou un tableur pour simuler une variable aléatoire"
+            ],
+            "notions_cles": [
+              "Épreuve de Bernoulli : 2 issues (succès/échec), paramètre $p$",
+              "Loi de Bernoulli : $P(X=1) = p$, $P(X=0) = 1-p$, espérance $E(X) = p$",
+              "Schéma de Bernoulli : $n$ épreuves identiques et indépendantes",
+              "Variable aléatoire : fonction qui associe un nombre à chaque issue",
+              "Espérance : $E(X) = \\sum x_i \\\times P(X=x_i)$, valeur moyenne sur un grand nombre d'expériences",
+              "Loi binomiale : variable aléatoire comptant le nombre de succès dans un schéma de Bernoulli"
+            ],
+            "exemples_st2s": [
+              "Probabilité qu'un médicament soit efficace sur $n$ patients (p = taux d'efficacité)",
+              "Nombre de personnes vaccinées dans un échantillon",
+              "Simulation d'une campagne de dépistage sur une population"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

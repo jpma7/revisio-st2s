@@ -1,0 +1,88 @@
+{
+  "sources": [
+    {
+      "id": "eduscol-bac-techno-2021",
+      "titre": "Sujet zéro – Bac technologique 2021 (ST2S/STSS)",
+      "niveau": "Terminale",
+      "serie": "ST2S",
+      "annee": 2021,
+      "source": "Ministère de l'Éducation nationale (EDUSCOL)",
+      "url": "https://eduscol.education.gouv.fr/sites/default/files/document/s0bac21-tle-spe-st2s-stss-2021pdf-68658.pdf",
+      "urlPage": "https://eduscol.education.gouv.fr/5634/baccalaureat-technologique-serie-sciences-et-technologies-de-la-sante-et-du-social-st2s",
+      "statut": "officiel",
+      "type": "sujet-zero",
+      "matiere": "STSS (Sciences et techniques sanitaires et sociales)",
+      "description": "Sujet zéro officiel 2021 pour le bac technologique ST2S. Ce document concerne l'épreuve STSS (coefficient 16). Les mathématiques en ST2S sont intégrées dans les enseignements scientifiques."
+    },
+    {
+      "id": "eduscol-annales-generales",
+      "titre": "Annales des épreuves du baccalauréat – Voie générale et technologique",
+      "niveau": "Terminale",
+      "serie": "Toutes séries",
+      "annee": 2021,
+      "source": "Ministère de l'Éducation nationale (EDUSCOL)",
+      "url": "",
+      "urlPage": "https://eduscol.education.gouv.fr/5199/annales-des-epreuves-du-baccalaureat-des-voies-generale-et-technologique",
+      "statut": "officiel",
+      "type": "annales",
+      "matiere": "Toutes matières",
+      "description": "Page EDUSCOL regroupant les annales depuis la session 2021. Les sujets des séries technologiques (ST2S, STL, etc.) y sont publiés au fil des sessions."
+    },
+    {
+      "id": "france-examen-st2s-maths",
+      "titre": "Annales mathématiques ST2S – France-examen.com",
+      "niveau": "Terminale",
+      "serie": "ST2S",
+      "annee": 2024,
+      "source": "France-examen.com (agrégateur)",
+      "url": "",
+      "urlPage": "https://france-examen.com/bac/annales/st2s/mathematiques/",
+      "statut": "externe",
+      "type": "annales",
+      "matiere": "Mathématiques",
+      "description": "Moteur d'annales regroupant les sujets de mathématiques du bac ST2S par année. Ce site agrège des sujets provenant des académies. Accès gratuit en navigation."
+    },
+    {
+      "id": "sujetdebac-st2s-maths",
+      "titre": "Annales mathématiques ST2S – Sujetdebac.fr",
+      "niveau": "Terminale",
+      "serie": "ST2S",
+      "annee": 2024,
+      "source": "Sujetdebac.fr (agrégateur)",
+      "url": "",
+      "urlPage": "https://www.sujetdebac.fr/annales/serie-st2s/mathematiques/",
+      "statut": "externe",
+      "type": "annales",
+      "matiere": "Mathématiques",
+      "description": "Archive de plus de 37 annales de mathématiques ST2S. Navigation par année, sujets et corrigés proposés. Site agrégateur, sources multiples."
+    },
+    {
+      "id": "sesamath-ressources-st2s",
+      "titre": "Ressources Sésamath – 1re ST2S",
+      "niveau": "1ère",
+      "serie": "ST2S",
+      "annee": 2024,
+      "source": "Sésamath (association d'enseignants)",
+      "url": "",
+      "urlPage": "https://sesamath.net/",
+      "statut": "externe",
+      "type": "ressources",
+      "matiere": "Mathématiques",
+      "description": "Ressources pédagogiques libres créées par des enseignants de mathématiques. Manuels numériques, exercices interactifs et cours complets pour le lycée."
+    },
+    {
+      "id": "cned-st2s",
+      "titre": "CNED – Cours à distance ST2S",
+      "niveau": "1ère / Terminale",
+      "serie": "ST2S",
+      "annee": 2024,
+      "source": "CNED (Centre national d'enseignement à distance)",
+      "url": "",
+      "urlPage": "https://www.cned.fr/enseignement-superieur-et-formation-professionnelle/lycee/bac-technologique",
+      "statut": "officiel",
+      "type": "cours",
+      "matiere": "Toutes matières",
+      "description": "Cours officiels à distance pour le bac technologique ST2S. Ressources pédagogiques du ministère, accessibles en ligne."
+    }
+  ]
+}
