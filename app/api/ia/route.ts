@@ -77,11 +77,46 @@ export async function POST(req: NextRequest) {
     // Ollama non disponible → passer au fallback
   }
 
-  // ─── 2. GROQ (cloud — GRATUIT, ultra-rapide) ────────
-  // Inscription gratuite sur https://console.groq.com
-  // Modèles recommandés pour les maths :
-  // • llama-3.3-70b-versatile  (excellent, gratuit)
-  // • qwen-2.5-72b-instruct    (spécialisé maths, gratuit)
+  // ─── 2. OPENAI (ChatGPT) — excellent en maths ────────
+  const openaiUrl = process.env.OPENAI_API_URL;
+  const openaiKey = process.env.OPENAI_API_KEY;
+  const openaiModel = process.env.OPENAI_API_MODEL || "gpt-4o";
+
+  if (openaiUrl && openaiKey) {
+    try {
+      const res = await fetch(openaiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${openaiKey}`,
+        },
+        body: JSON.stringify({
+          model: openaiModel,
+          messages,
+          ...commonParams,
+        }),
+      });
+
+      if (res.ok) {
+        const data = (await res.json()) as {
+          choices?: { message?: { content?: string } }[];
+        };
+        const answer =
+          data.choices?.[0]?.message?.content?.trim() ||
+          "Je ne sais pas avec les documents fournis.";
+
+        return NextResponse.json({
+          answer,
+          source: `OpenAI (${openaiModel}) + documents internes Révisio`,
+          usedOllama: false,
+        });
+      }
+    } catch {
+      // OpenAI indisponible → passer au fallback suivant
+    }
+  }
+
+  // ─── 3. GROQ (cloud — GRATUIT, ultra-rapide) ────────
   const groqUrl = process.env.GROQ_API_URL;
   const groqKey = process.env.GROQ_API_KEY;
   const groqModel = process.env.GROQ_API_MODEL || "llama-3.3-70b-versatile";
@@ -120,7 +155,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // ─── 3. OPENROUTER (cloud — fallback ultime) ────────
+  // ─── 4. OPENROUTER (cloud — fallback ultime) ────────
   const openrouterUrl = process.env.OPENROUTER_API_URL;
   const openrouterKey = process.env.OPENROUTER_API_KEY;
   const openrouterModel =
@@ -167,7 +202,7 @@ export async function POST(req: NextRequest) {
     {
       answer: "Je ne sais pas avec les documents fournis.",
       source:
-        "Aucun modèle IA disponible. Vérifie qu'Ollama est lancé sur ton ordinateur, ou configure une clé API Groq/OpenRouter.",
+        "Aucun modèle IA disponible. Vérifie qu'Ollama est lancé sur ton ordinateur, ou qu'une clé API est configurée.",
       usedOllama: false,
     },
     { status: 200 }
