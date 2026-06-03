@@ -5,6 +5,7 @@ import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import programmeData from "@/data/exercises/programme-st2s.json";
 import ExerciseCard from "@/components/ExerciseCard";
 import AnswerPanel from "@/components/AnswerPanel";
+import MathText from "@/components/MathText";
 
 type Exercise = {
   id: string;
@@ -211,9 +212,9 @@ export default function ReviserClient() {
               <h2 className="font-display text-2xl text-slate mb-4">
                 {selected.titre}
               </h2>
-              <p className="text-base leading-relaxed text-slate">
+              <MathText className="text-base leading-relaxed text-slate">
                 {selected.question}
-              </p>
+              </MathText>
               {selected.source && (
                 <p className="mt-4 text-xs text-slate-light/60">
                   Source : {selected.source}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MathText from "./MathText";
 
 interface AnswerPanelProps {
   typeReponse: "nombre" | "texte";
@@ -132,14 +133,14 @@ export default function AnswerPanel({
       {status === "help" && helpIndex > 0 && (
         <div className="mt-5 rounded-2xl border-2 border-warm-yellow bg-warm-yellow/10 p-5 animate-fade-in">
           <p className="mb-1 font-bold text-warm-yellow-dark">💡 Indice {helpIndex} / {aide.length}</p>
-          <p className="text-slate leading-relaxed">{aide[helpIndex - 1]}</p>
+          <MathText className="text-slate leading-relaxed">{aide[helpIndex - 1]}</MathText>
         </div>
       )}
 
       {status === "correct" && (
         <div className="mt-5 rounded-2xl border-2 border-sage bg-sage/10 p-5 animate-fade-in-up">
           <p className="font-display text-xl text-sage-dark mb-2">🌟 Super !</p>
-          <p className="text-slate leading-relaxed">{correction}</p>
+          <MathText className="text-slate leading-relaxed">{correction}</MathText>
         </div>
       )}
 
@@ -155,7 +156,7 @@ export default function AnswerPanel({
       {showCorrection && status !== "correct" && (
         <div className="mt-5 rounded-2xl border-2 border-slate-light/30 bg-cream p-5 animate-fade-in">
           <p className="mb-2 font-bold text-slate-light">📖 Correction</p>
-          <p className="text-slate leading-relaxed">{correction}</p>
+          <MathText className="text-slate leading-relaxed">{correction}</MathText>
         </div>
       )}
     </div>

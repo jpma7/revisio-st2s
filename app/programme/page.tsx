@@ -1,5 +1,6 @@
 import Link from "next/link";
 import programmeData from "@/data/programme.json";
+import MathText from "@/components/MathText";
 
 export default function ProgrammePage() {
   const { programme } = programmeData;
@@ -57,7 +58,7 @@ export default function ProgrammePage() {
                         {chapitre.competences.map((c, i) => (
                           <li key={i} className="flex gap-2 text-sm text-slate leading-relaxed">
                             <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-terracotta flex-shrink-0" />
-                            <span>{c}</span>
+                            <MathText>{c}</MathText>
                           </li>
                         ))}
                       </ul>
@@ -71,7 +72,7 @@ export default function ProgrammePage() {
                         {chapitre.notions_cles.map((n, i) => (
                           <li key={i} className="flex gap-2 text-sm text-slate leading-relaxed">
                             <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-sage flex-shrink-0" />
-                            <span>{n}</span>
+                            <MathText>{n}</MathText>
                           </li>
                         ))}
                       </ul>
@@ -85,7 +86,7 @@ export default function ProgrammePage() {
                     <ul className="space-y-1">
                       {chapitre.exemples_st2s.map((e, i) => (
                         <li key={i} className="text-sm text-slate-light">
-                          • {e}
+                          • <MathText>{e}</MathText>
                         </li>
                       ))}
                     </ul>

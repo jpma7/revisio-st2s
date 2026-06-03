@@ -5,6 +5,7 @@ import Link from "next/link";
 import exercisesData from "@/data/exercises/programme-st2s.json";
 import programmeData from "@/data/programme.json";
 import AnswerPanel from "@/components/AnswerPanel";
+import MathText from "@/components/MathText";
 
 type Exercise = {
   id: string;
@@ -350,9 +351,9 @@ export default function RevisionExpressClient() {
         <h2 className="font-display text-2xl text-slate mb-4">
           {currentEx.titre}
         </h2>
-        <p className="text-base leading-relaxed text-slate">
+        <MathText className="text-base leading-relaxed text-slate">
           {currentEx.question}
-        </p>
+        </MathText>
       </div>
 
       <AnswerPanel
