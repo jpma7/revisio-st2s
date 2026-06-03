@@ -42,14 +42,22 @@ export async function POST(req: NextRequest) {
     max_tokens: 1200,
   };
 
-  // ─── 1. OLLAMA (local) — modèle le plus gros disponible ───
+  // ─── 1. OLLAMA (local ou cloud) — modèle le plus gros disponible ───
   const ollamaUrl = process.env.OLLAMA_URL || "http://localhost:11434";
   const ollamaModel = process.env.OLLAMA_MODEL || "qwen3-vl:30b";
+  const ollamaKey = process.env.OLLAMA_API_KEY;
 
   try {
+    const headers: Record<string, string> = {
+      "Content-Type": "application/json",
+    };
+    if (ollamaKey) {
+      headers["Authorization"] = `Bearer ${ollamaKey}`;
+    }
+
     const ollamaRes = await fetch(`${ollamaUrl}/api/generate`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers,
       body: JSON.stringify({
         model: ollamaModel,
         system: SYSTEM_PROMPT,
@@ -66,9 +74,10 @@ export async function POST(req: NextRequest) {
       const answer = ollamaData.response?.trim() || "";
 
       if (answer) {
+        const isCloud = ollamaUrl.startsWith("https");
         return NextResponse.json({
           answer,
-          source: `Ollama (${ollamaModel}) + documents internes Révisio`,
+          source: `${isCloud ? "Ollama Cloud" : "Ollama local"} (${ollamaModel}) + documents internes Révisio`,
           usedOllama: true,
         });
       }
