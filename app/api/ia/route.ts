@@ -42,22 +42,14 @@ export async function POST(req: NextRequest) {
     max_tokens: 1200,
   };
 
-  // ─── 1. OLLAMA (local ou cloud) — modèle le plus gros disponible ───
+  // ─── 1. OLLAMA (local uniquement) ────────────────────
   const ollamaUrl = process.env.OLLAMA_URL || "http://localhost:11434";
   const ollamaModel = process.env.OLLAMA_MODEL || "qwen3-vl:30b";
-  const ollamaKey = process.env.OLLAMA_API_KEY;
 
   try {
-    const headers: Record<string, string> = {
-      "Content-Type": "application/json",
-    };
-    if (ollamaKey) {
-      headers["Authorization"] = `Bearer ${ollamaKey}`;
-    }
-
     const ollamaRes = await fetch(`${ollamaUrl}/api/generate`, {
       method: "POST",
-      headers,
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         model: ollamaModel,
         system: SYSTEM_PROMPT,
@@ -74,10 +66,9 @@ export async function POST(req: NextRequest) {
       const answer = ollamaData.response?.trim() || "";
 
       if (answer) {
-        const isCloud = ollamaUrl.startsWith("https");
         return NextResponse.json({
           answer,
-          source: `${isCloud ? "Ollama Cloud" : "Ollama local"} (${ollamaModel}) + documents internes Révisio`,
+          source: `Ollama local (${ollamaModel}) + documents internes Révisio`,
           usedOllama: true,
         });
       }
@@ -86,21 +77,25 @@ export async function POST(req: NextRequest) {
     // Ollama non disponible → passer au fallback
   }
 
-  // ─── 2. MISTRAL API (fallback 1) — mistral-large-latest ───
-  const mistralUrl = process.env.MISTRAL_API_URL;
-  const mistralKey = process.env.MISTRAL_API_KEY;
-  const mistralModel = process.env.MISTRAL_API_MODEL || "mistral-large-latest";
+  // ─── 2. GROQ (cloud — GRATUIT, ultra-rapide) ────────
+  // Inscription gratuite sur https://console.groq.com
+  // Modèles recommandés pour les maths :
+  // • llama-3.3-70b-versatile  (excellent, gratuit)
+  // • qwen-2.5-72b-instruct    (spécialisé maths, gratuit)
+  const groqUrl = process.env.GROQ_API_URL;
+  const groqKey = process.env.GROQ_API_KEY;
+  const groqModel = process.env.GROQ_API_MODEL || "llama-3.3-70b-versatile";
 
-  if (mistralUrl && mistralKey) {
+  if (groqUrl && groqKey) {
     try {
-      const res = await fetch(mistralUrl, {
+      const res = await fetch(groqUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${mistralKey}`,
+          Authorization: `Bearer ${groqKey}`,
         },
         body: JSON.stringify({
-          model: mistralModel,
+          model: groqModel,
           messages,
           ...commonParams,
         }),
@@ -116,17 +111,16 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({
           answer,
-          source: `Mistral (${mistralModel}) + documents internes Révisio`,
+          source: `Groq (${groqModel}) + documents internes Révisio`,
           usedOllama: false,
         });
       }
     } catch {
-      // Mistral indisponible → passer au fallback suivant
+      // Groq indisponible → passer au fallback suivant
     }
   }
 
-  // ─── 3. OPENROUTER (fallback 2) — accès à Claude, GPT-4, Llama, Qwen… ───
-  // OpenRouter offre une clé gratuite et des modèles très performants en maths.
+  // ─── 3. OPENROUTER (cloud — fallback ultime) ────────
   const openrouterUrl = process.env.OPENROUTER_API_URL;
   const openrouterKey = process.env.OPENROUTER_API_KEY;
   const openrouterModel =
@@ -173,7 +167,7 @@ export async function POST(req: NextRequest) {
     {
       answer: "Je ne sais pas avec les documents fournis.",
       source:
-        "Aucun modèle IA disponible. Vérifie qu'Ollama est lancé ou qu'une clé API est configurée.",
+        "Aucun modèle IA disponible. Vérifie qu'Ollama est lancé sur ton ordinateur, ou configure une clé API Groq/OpenRouter.",
       usedOllama: false,
     },
     { status: 200 }
