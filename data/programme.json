@@ -38,9 +38,9 @@
               "Résoudre des problèmes de pourcentages d'évolution (taux multiplicateur, évolutions successives)"
             ],
             "notions_cles": [
-              "Suite arithmétique : définition, formule explicite $u_n = u_0 + n \\\times r$, somme $S = (n+1) \\\times \\frac{u_0 + u_n}{2}$",
-              "Suite géométrique : définition, formule explicite $u_n = u_0 \\\times q^n$, somme $S = u_0 \\\times \\frac{1 - q^{n+1}}{1 - q}$",
-              "Taux multiplicateur : augmentation de $t\\%$ → $\\\times (1 + \\frac{t}{100})$, diminution → $\\\times (1 - \\frac{t}{100})$",
+              "Suite arithmétique : définition, formule explicite $u_n = u_0 + n \\times r$, somme $S = (n+1) \\times \\frac{u_0 + u_n}{2}$",
+              "Suite géométrique : définition, formule explicite $u_n = u_0 \\times q^n$, somme $S = u_0 \\times \\frac{1 - q^{n+1}}{1 - q}$",
+              "Taux multiplicateur : augmentation de $t\\%$ → $\\times (1 + \\frac{t}{100})$, diminution → $\\times (1 - \\frac{t}{100})$",
               "Évolutions successives : multiplier les taux multiplicateurs"
             ],
             "exemples_st2s": [
@@ -137,7 +137,7 @@
               "Probabilité conditionnelle : $P_B(A) = \\frac{P(A \\cap B)}{P(B)}$",
               "Arbre pondéré : probabilités sur les branches, produit sur les chemins",
               "Formule des probabilités totales : $P(A) = P(A \\cap B) + P(A \\cap \\bar{B})$",
-              "Événements indépendants : $P(A \\cap B) = P(A) \\\times P(B)$",
+              "Événements indépendants : $P(A \\cap B) = P(A) \\times P(B)$",
               "Tableau de contingence : croisement de deux caractères"
             ],
             "exemples_st2s": [
@@ -161,7 +161,7 @@
               "Loi de Bernoulli : $P(X=1) = p$, $P(X=0) = 1-p$, espérance $E(X) = p$",
               "Schéma de Bernoulli : $n$ épreuves identiques et indépendantes",
               "Variable aléatoire : fonction qui associe un nombre à chaque issue",
-              "Espérance : $E(X) = \\sum x_i \\\times P(X=x_i)$, valeur moyenne sur un grand nombre d'expériences",
+              "Espérance : $E(X) = \\sum x_i \\times P(X=x_i)$, valeur moyenne sur un grand nombre d'expériences",
               "Loi binomiale : variable aléatoire comptant le nombre de succès dans un schéma de Bernoulli"
             ],
             "exemples_st2s": [

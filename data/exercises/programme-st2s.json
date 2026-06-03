@@ -13,10 +13,10 @@
       "unite": "patients",
       "aide": [
         "C'est une suite arithmétique. Le premier terme $u_0 = 50$ et la raison $r = 8$.",
-        "La formule est : $u_n = u_0 + n \\\times r$.",
-        "Avril correspond au mois 3, donc calcule $u_3 = 50 + 3 \\\times 8$."
+        "La formule est : $u_n = u_0 + n \\times r$.",
+        "Avril correspond au mois 3, donc calcule $u_3 = 50 + 3 \\times 8$."
       ],
-      "correction": "On a une suite arithmétique avec $u_0 = 50$ et $r = 8$. La formule explicite est $u_n = 50 + 8n$. Pour avril (mois 3) : $u_3 = 50 + 3 \\\times 8 = 50 + 24 = 74$. Il y aura 74 patients pris en charge en avril.",
+      "correction": "On a une suite arithmétique avec $u_0 = 50$ et $r = 8$. La formule explicite est $u_n = 50 + 8n$. Pour avril (mois 3) : $u_3 = 50 + 3 \\times 8 = 50 + 24 = 74$. Il y aura 74 patients pris en charge en avril.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Suites numériques"
     },
@@ -33,10 +33,10 @@
       "unite": "mg",
       "aide": [
         "C'est une suite géométrique. Le premier terme $u_0 = 200$ et la raison $q = 0,6$.",
-        "La formule est : $u_n = u_0 \\\times q^n$.",
-        "Calcule $u_3 = 200 \\\times 0,6^3 = 200 \\\times 0,216$."
+        "La formule est : $u_n = u_0 \\times q^n$.",
+        "Calcule $u_3 = 200 \\times 0,6^3 = 200 \\times 0,216$."
       ],
-      "correction": "On a une suite géométrique avec $u_0 = 200$ et $q = 0,6$. Après 3 heures : $u_3 = 200 \\\times 0,6^3 = 200 \\\times 0,216 = 43,2$. Arrondi à l'unité : 43 mg restent après 3 heures.",
+      "correction": "On a une suite géométrique avec $u_0 = 200$ et $q = 0,6$. Après 3 heures : $u_3 = 200 \\times 0,6^3 = 200 \\times 0,216 = 43,2$. Arrondi à l'unité : 43 mg restent après 3 heures.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Suites numériques"
     },
@@ -54,9 +54,9 @@
       "aide": [
         "Augmenter de 5% revient à multiplier par $1 + \\frac{5}{100} = 1,05$.",
         "C'est une suite géométrique de raison $q = 1,05$.",
-        "Calcule $u_2 = 80000 \\\times 1,05^2$."
+        "Calcule $u_2 = 80000 \\times 1,05^2$."
       ],
-      "correction": "Le taux multiplicateur est $1 + 0,05 = 1,05$. C'est une suite géométrique : $u_n = 80000 \\\times 1,05^n$. Dans 2 ans : $u_2 = 80000 \\\times 1,05^2 = 80000 \\\times 1,1025 = 88200$ €.",
+      "correction": "Le taux multiplicateur est $1 + 0,05 = 1,05$. C'est une suite géométrique : $u_n = 80000 \\times 1,05^n$. Dans 2 ans : $u_2 = 80000 \\times 1,05^2 = 80000 \\times 1,1025 = 88200$ €.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Suites numériques"
     },
@@ -74,9 +74,9 @@
       "aide": [
         "Le taux multiplicateur pour +3% est 1,03.",
         "Le taux multiplicateur pour +4% est 1,04.",
-        "Le taux global est $1,03 \\\times 1,04$. Pour trouver le pourcentage, calcule $(1,03 \\\times 1,04 - 1) \\\times 100$."
+        "Le taux global est $1,03 \\times 1,04$. Pour trouver le pourcentage, calcule $(1,03 \\times 1,04 - 1) \\times 100$."
       ],
-      "correction": "Les taux multiplicateurs sont 1,03 et 1,04. Le taux global est $1,03 \\\times 1,04 = 1,0712$. Le taux d'augmentation global est $(1,0712 - 1) \\\times 100 = 7,12\\%$, soit environ 7,1% au dixième près.",
+      "correction": "Les taux multiplicateurs sont 1,03 et 1,04. Le taux global est $1,03 \\times 1,04 = 1,0712$. Le taux d'augmentation global est $(1,0712 - 1) \\times 100 = 7,12\\%$, soit environ 7,1% au dixième près.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Suites numériques"
     },
@@ -93,10 +93,10 @@
       "unite": "visites",
       "aide": [
         "C'est une suite arithmétique avec $u_1 = 12$ et $r = 2$.",
-        "Le 5ème terme est $u_5 = 12 + 4 \\\times 2 = 20$.",
-        "La somme des 5 termes est $S = 5 \\\times \\frac{12 + 20}{2}$."
+        "Le 5ème terme est $u_5 = 12 + 4 \\times 2 = 20$.",
+        "La somme des 5 termes est $S = 5 \\times \\frac{12 + 20}{2}$."
       ],
-      "correction": "Suite arithmétique : $u_1 = 12$, $r = 2$. Les termes sont 12, 14, 16, 18, 20. La somme est $S = 5 \\\times \\frac{12 + 20}{2} = 5 \\\times 16 = 100$. L'infirmier fait 100 visites en 5 semaines.",
+      "correction": "Suite arithmétique : $u_1 = 12$, $r = 2$. Les termes sont 12, 14, 16, 18, 20. La somme est $S = 5 \\times \\frac{12 + 20}{2} = 5 \\times 16 = 100$. L'infirmier fait 100 visites en 5 semaines.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Suites numériques"
     },
@@ -113,10 +113,10 @@
       "unite": "mg/L",
       "aide": [
         "Remplace $t$ par 2 dans la formule.",
-        "Calcule $f(2) = -0,5 \\\times 2^2 + 4 \\\times 2 + 2$.",
-        "$2^2 = 4$, donc $-0,5 \\\times 4 = -2$."
+        "Calcule $f(2) = -0,5 \\times 2^2 + 4 \\times 2 + 2$.",
+        "$2^2 = 4$, donc $-0,5 \\times 4 = -2$."
       ],
-      "correction": "$f(2) = -0,5 \\\times 2^2 + 4 \\\times 2 + 2 = -0,5 \\\times 4 + 8 + 2 = -2 + 8 + 2 = 8$. La concentration après 2 heures est de 8 mg/L.",
+      "correction": "$f(2) = -0,5 \\times 2^2 + 4 \\times 2 + 2 = -0,5 \\times 4 + 8 + 2 = -2 + 8 + 2 = 8$. La concentration après 2 heures est de 8 mg/L.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Fonctions"
     },
@@ -133,10 +133,10 @@
       "unite": "€",
       "aide": [
         "Remplace $x$ par 50 dans $C(x) = 0,01x^2 + 2x + 100$.",
-        "Calcule $0,01 \\\times 50^2 = 0,01 \\\times 2500 = 25$.",
-        "Puis $2 \\\times 50 = 100$. Additionne le tout avec 100."
+        "Calcule $0,01 \\times 50^2 = 0,01 \\times 2500 = 25$.",
+        "Puis $2 \\times 50 = 100$. Additionne le tout avec 100."
       ],
-      "correction": "$C(50) = 0,01 \\\times 50^2 + 2 \\\times 50 + 100 = 0,01 \\\times 2500 + 100 + 100 = 25 + 100 + 100 = 225$. Le coût de production de 50 médicaments est de 225 €.",
+      "correction": "$C(50) = 0,01 \\times 50^2 + 2 \\times 50 + 100 = 0,01 \\times 2500 + 100 + 100 = 25 + 100 + 100 = 225$. Le coût de production de 50 médicaments est de 225 €.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Fonctions"
     },
@@ -153,10 +153,10 @@
       "unite": "",
       "aide": [
         "Pour $f(x) = ax^2 + bx + c$, le sommet a pour abscisse $x = -\\frac{b}{2a}$.",
-        "Ici $a = -2$ et $b = 8$, donc $x = -\\frac{8}{2 \\\times (-2)} = 2$.",
-        "Calcule $f(2) = -2 \\\times 2^2 + 8 \\\times 2 + 10$."
+        "Ici $a = -2$ et $b = 8$, donc $x = -\\frac{8}{2 \\times (-2)} = 2$.",
+        "Calcule $f(2) = -2 \\times 2^2 + 8 \\times 2 + 10$."
       ],
-      "correction": "Le sommet de la parabole a pour abscisse $x = -\\frac{b}{2a} = -\\frac{8}{2 \\\times (-2)} = 2$. L'ordonnée maximale est $f(2) = -2 \\\times 4 + 16 + 10 = -8 + 16 + 10 = 18$. L'efficacité maximale est 18.",
+      "correction": "Le sommet de la parabole a pour abscisse $x = -\\frac{b}{2a} = -\\frac{8}{2 \\times (-2)} = 2$. L'ordonnée maximale est $f(2) = -2 \\times 4 + 16 + 10 = -8 + 16 + 10 = 18$. L'efficacité maximale est 18.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Fonctions"
     },
@@ -167,16 +167,16 @@
       "chapitre": "fonctions-variable-reelle",
       "titre": "Croissance exponentielle",
       "difficulte": 2,
-      "question": "Le nombre de bactéries dans une culture est modélisé par $N(t) = 1000 \\\times e^{0,2t}$ où $t$ est en heures. Combien y a-t-il de bactéries après 5 heures ? (arrondir à l'unité)",
+      "question": "Le nombre de bactéries dans une culture est modélisé par $N(t) = 1000 \\times e^{0,2t}$ où $t$ est en heures. Combien y a-t-il de bactéries après 5 heures ? (arrondir à l'unité)",
       "typeReponse": "nombre",
       "reponseAttendue": 2718,
       "unite": "bactéries",
       "aide": [
-        "$e^{0,2 \\\times 5} = e^1$.",
+        "$e^{0,2 \\times 5} = e^1$.",
         "$e \\approx 2,718$.",
-        "Calcule $1000 \\\times e^1 \\approx 1000 \\\times 2,718$."
+        "Calcule $1000 \\times e^1 \\approx 1000 \\times 2,718$."
       ],
-      "correction": "$N(5) = 1000 \\\times e^{0,2 \\\times 5} = 1000 \\\times e^1 = 1000 \\\times e \\approx 1000 \\\times 2,71828 = 2718,28$. Il y a environ 2718 bactéries après 5 heures.",
+      "correction": "$N(5) = 1000 \\times e^{0,2 \\times 5} = 1000 \\times e^1 = 1000 \\times e \\approx 1000 \\times 2,71828 = 2718,28$. Il y a environ 2718 bactéries après 5 heures.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Fonctions"
     },
@@ -196,7 +196,7 @@
         "Soit $-t^2 + 6t - 8 = 0$, ou $t^2 - 6t + 8 = 0$ en multipliant par -1.",
         "Cherche deux nombres dont le produit est 8 et la somme est 6."
       ],
-      "correction": "Résolvons $-t^2 + 6t + 7 = 15$. On obtient $-t^2 + 6t - 8 = 0$, soit $t^2 - 6t + 8 = 0$. Les racines de $t^2 - 6t + 8$ sont $t = 2$ et $t = 4$ (car $2 \\\times 4 = 8$ et $2 + 4 = 6$). La plus petite valeur positive est $t = 2$ heures.",
+      "correction": "Résolvons $-t^2 + 6t + 7 = 15$. On obtient $-t^2 + 6t - 8 = 0$, soit $t^2 - 6t + 8 = 0$. Les racines de $t^2 - 6t + 8$ sont $t = 2$ et $t = 4$ (car $2 \\times 4 = 8$ et $2 + 4 = 6$). La plus petite valeur positive est $t = 2$ heures.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Fonctions"
     },
@@ -212,11 +212,11 @@
       "reponseAttendue": "6x+4",
       "unite": "",
       "aide": [
-        "La dérivée de $x^2$ est $2x$, donc celle de $3x^2$ est $3 \\\times 2x = 6x$.",
+        "La dérivée de $x^2$ est $2x$, donc celle de $3x^2$ est $3 \\times 2x = 6x$.",
         "La dérivée de $4x$ est $4$.",
         "La dérivée d'une constante est 0."
       ],
-      "correction": "$f'(x) = 3 \\\times 2x + 4 + 0 = 6x + 4$. La dérivée est $f'(x) = 6x + 4$.",
+      "correction": "$f'(x) = 3 \\times 2x + 4 + 0 = 6x + 4$. La dérivée est $f'(x) = 6x + 4$.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Dérivation"
     },
@@ -254,9 +254,9 @@
       "aide": [
         "Le coefficient directeur de la tangente en $x = a$ est $f'(a)$.",
         "Calcule $f'(x) = 2x + 2$.",
-        "Puis $f'(1) = 2 \\\times 1 + 2 = 4$."
+        "Puis $f'(1) = 2 \\times 1 + 2 = 4$."
       ],
-      "correction": "$f'(x) = 2x + 2$. Le coefficient directeur de la tangente en $x = 1$ est $f'(1) = 2 \\\times 1 + 2 = 4$.",
+      "correction": "$f'(x) = 2x + 2$. Le coefficient directeur de la tangente en $x = 1$ est $f'(1) = 2 \\times 1 + 2 = 4$.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Dérivation"
     },
@@ -276,7 +276,7 @@
         "$B'(x) = -x + 4$.",
         "Résous $-x + 4 = 0$, donc $x = 4$."
       ],
-      "correction": "$B'(x) = -0,5 \\\times 2x + 4 = -x + 4$. $B'(x) = 0$ quand $x = 4$. Comme $a = -0,5 < 0$, c'est bien un maximum. La production qui maximise le bénéfice est 4 milliers de masques.",
+      "correction": "$B'(x) = -0,5 \\times 2x + 4 = -x + 4$. $B'(x) = 0$ quand $x = 4$. Comme $a = -0,5 < 0$, c'est bien un maximum. La production qui maximise le bénéfice est 4 milliers de masques.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Dérivation"
     },
@@ -333,10 +333,10 @@
       "unite": "€",
       "aide": [
         "Moyenne pondérée = somme des (effectif × valeur) / effectif total.",
-        "Somme = $20 \\\times 4500 + 50 \\\times 2000 + 30 \\\times 1800 = 90000 + 100000 + 54000 = 244000$.",
+        "Somme = $20 \\times 4500 + 50 \\times 2000 + 30 \\times 1800 = 90000 + 100000 + 54000 = 244000$.",
         "Effectif total = $20 + 50 + 30 = 100$. Moyenne = $244000 / 100$."
       ],
-      "correction": "Somme pondérée = $20 \\\times 4500 + 50 \\\times 2000 + 30 \\\times 1800 = 90000 + 100000 + 54000 = 244000$. Effectif total = 100. Moyenne = $244000 / 100 = 2440$ €.",
+      "correction": "Somme pondérée = $20 \\times 4500 + 50 \\times 2000 + 30 \\times 1800 = 90000 + 100000 + 54000 = 244000$. Effectif total = 100. Moyenne = $244000 / 100 = 2440$ €.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Statistique"
     },
@@ -414,9 +414,9 @@
       "aide": [
         "Utilise la formule des probabilités totales.",
         "$P(A) = P(A \\cap C) + P(A \\cap \\bar{C})$.",
-        "$P(A \\cap C) = P(C) \\\times P_C(A) = 0,30 \\\times 0,80 = 0,24$. $P(A \\cap \\bar{C}) = 0,70 \\\times 0,50 = 0,35$. Total = $0,24 + 0,35 = 0,59$."
+        "$P(A \\cap C) = P(C) \\times P_C(A) = 0,30 \\times 0,80 = 0,24$. $P(A \\cap \\bar{C}) = 0,70 \\times 0,50 = 0,35$. Total = $0,24 + 0,35 = 0,59$."
       ],
-      "correction": "Par la formule des probabilités totales : $P(A) = P(C) \\\times P_C(A) + P(\\bar{C}) \\\times P_{\\bar{C}}(A) = 0,30 \\\times 0,80 + 0,70 \\\times 0,50 = 0,24 + 0,35 = 0,59 = 59\\%$.",
+      "correction": "Par la formule des probabilités totales : $P(A) = P(C) \\times P_C(A) + P(\\bar{C}) \\times P_{\\bar{C}}(A) = 0,30 \\times 0,80 + 0,70 \\times 0,50 = 0,24 + 0,35 = 0,59 = 59\\%$.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Probabilités conditionnelles"
     },
@@ -452,11 +452,11 @@
       "reponseAttendue": "Non",
       "unite": "",
       "aide": [
-        "Deux événements sont indépendants si $P(A \\cap B) = P(A) \\\times P(B)$.",
-        "Calcule $P(maladie) \\\times P(fumeur) = 0,1 \\\times 0,3 = 0,03$.",
+        "Deux événements sont indépendants si $P(A \\cap B) = P(A) \\times P(B)$.",
+        "Calcule $P(maladie) \\times P(fumeur) = 0,1 \\times 0,3 = 0,03$.",
         "$P(maladie \\cap fumeur) = 0,05 \\neq 0,03$. Donc ils ne sont pas indépendants."
       ],
-      "correction": "Pour l'indépendance, on vérifie si $P(maladie \\cap fumeur) = P(maladie) \\\times P(fumeur)$. $0,1 \\\times 0,3 = 0,03$, mais $P(maladie \\cap fumeur) = 0,05$. Comme $0,05 \\neq 0,03$, les événements ne sont pas indépendants. Réponse : Non.",
+      "correction": "Pour l'indépendance, on vérifie si $P(maladie \\cap fumeur) = P(maladie) \\times P(fumeur)$. $0,1 \\times 0,3 = 0,03$, mais $P(maladie \\cap fumeur) = 0,05$. Comme $0,05 \\neq 0,03$, les événements ne sont pas indépendants. Réponse : Non.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Probabilités conditionnelles"
     },
@@ -494,9 +494,9 @@
       "aide": [
         "C'est un schéma de Bernoulli avec $n = 3$ et $p = 0,8$.",
         "Les chemins avec exactement 2 succès : SSP, SPS, PSS (où S = protégé, P = non protégé).",
-        "Chaque chemin a pour probabilité $0,8^2 \\\times 0,2 = 0,128$. Il y a 3 chemins, donc $3 \\\times 0,128 = 0,384$."
+        "Chaque chemin a pour probabilité $0,8^2 \\times 0,2 = 0,128$. Il y a 3 chemins, donc $3 \\times 0,128 = 0,384$."
       ],
-      "correction": "Schéma de Bernoulli ($n=3$, $p=0,8$). Les chemins avec exactement 2 succès sont SSP, SPS, PSS. Chacun a pour probabilité $0,8^2 \\\times 0,2 = 0,128$. Avec 3 chemins : $3 \\\times 0,128 = 0,384$, soit environ 0,38.",
+      "correction": "Schéma de Bernoulli ($n=3$, $p=0,8$). Les chemins avec exactement 2 succès sont SSP, SPS, PSS. Chacun a pour probabilité $0,8^2 \\times 0,2 = 0,128$. Avec 3 chemins : $3 \\times 0,128 = 0,384$, soit environ 0,38.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Bernoulli"
     },
@@ -512,11 +512,11 @@
       "reponseAttendue": 2.1,
       "unite": "",
       "aide": [
-        "$E(X) = \\sum x_i \\\times P(X=x_i)$.",
-        "Calcule $1 \\\times 0,5 + 2 \\\times 0,3 + 5 \\\times 0,2$.",
+        "$E(X) = \\sum x_i \\times P(X=x_i)$.",
+        "Calcule $1 \\times 0,5 + 2 \\times 0,3 + 5 \\times 0,2$.",
         "$0,5 + 0,6 + 1,0 = 2,1$."
       ],
-      "correction": "$E(X) = 1 \\\times 0,5 + 2 \\\times 0,3 + 5 \\\times 0,2 = 0,5 + 0,6 + 1,0 = 2,1$. L'espérance de X est 2,1.",
+      "correction": "$E(X) = 1 \\times 0,5 + 2 \\times 0,3 + 5 \\times 0,2 = 0,5 + 0,6 + 1,0 = 2,1$. L'espérance de X est 2,1.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Bernoulli"
     },
@@ -816,7 +816,7 @@
         "Somme = $8 + 12 + 10 + 14 + 16 = 60$.",
         "Moyenne = $60 / 5 = 12$."
       ],
-      "correction": "La moyenne est $\frac{8 + 12 + 10 + 14 + 16}{5} = \frac{60}{5} = 12$. La cellule affiche 12.",
+      "correction": "La moyenne est $\\frac{8 + 12 + 10 + 14 + 16}{5} = \\frac{60}{5} = 12$. La cellule affiche 12.",
       "estOfficiel": false,
       "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
     },
@@ -907,13 +907,13 @@
       "chapitre": "probabilites-conditionnelles",
       "titre": "Arbre pondéré – test de dépistage",
       "difficulte": 2,
-      "question": "Un arbre pondéré représente la situation suivante : $P(M) = 0,3$ (maladie) et $P(\bar{M}) = 0,7$. Deuxième niveau : si $M$, $P(T) = 0,9$ (test positif) ; si $\bar{M}$, $P(T) = 0,2$. Quelle est la probabilité qu'une personne ait un test positif ? (en %)",
+      "question": "Un arbre pondéré représente la situation suivante : $P(M) = 0,3$ (maladie) et $P(\\bar{M}) = 0,7$. Deuxième niveau : si $M$, $P(T) = 0,9$ (test positif) ; si $\\bar{M}$, $P(T) = 0,2$. Quelle est la probabilité qu'une personne ait un test positif ? (en %)",
       "typeReponse": "nombre",
       "reponseAttendue": 41,
       "unite": "%",
       "aide": [
         "Utilise la formule des probabilités totales.",
-        "$P(T) = P(M) \\times P_M(T) + P(\bar{M}) \\times P_{\bar{M}}(T)$.",
+        "$P(T) = P(M) \\times P_M(T) + P(\\bar{M}) \\times P_{\\bar{M}}(T)$.",
         "$P(T) = 0,3 \\times 0,9 + 0,7 \\times 0,2 = 0,27 + 0,14 = 0,41 = 41\\%$."
       ],
       "correction": "Par la formule des probabilités totales : $P(T) = 0,3 \\times 0,9 + 0,7 \\times 0,2 = 0,27 + 0,14 = 0,41 = 41\\%$. La probabilité d'un test positif est 41%.",
