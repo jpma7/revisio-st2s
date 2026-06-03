@@ -231,6 +231,12 @@ export default function ReviserClient() {
                 setProgress(selected.id, correct);
                 refreshProgress();
               }}
+              onNext={() => {
+                const idx = filtered.findIndex((e) => e.id === selectedId);
+                const next = filtered[idx + 1];
+                if (next) setSelectedId(next.id);
+              }}
+              isLast={filtered.findIndex((e) => e.id === selectedId) === filtered.length - 1}
             />
           </div>
         ) : (

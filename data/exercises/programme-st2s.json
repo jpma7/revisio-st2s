@@ -536,7 +536,7 @@
         "Pour convertir des litres en centilitres, on multiplie par 100.",
         "Calcule $2,5 \\times 100$."
       ],
-      "correction": "1 L = 100 cL, donc $2,5 \\times 100 = 250$ cL. La perfusion contient 250 cL de sérum.",
+      "correction": "Étape 1 : on sait que $1\\,\\text{L} = 100\\,\\text{cL}$. Étape 2 : pour convertir, on multiplie par 100 : $2,5 \\times 100 = 250$. Étape 3 : la perfusion contient donc $250\\,\\text{cL}$ de sérum.",
       "estOfficiel": false,
       "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
     },
@@ -556,7 +556,7 @@
         "$120 \\times 0,15 = 18$.",
         "Vérifie : $10\\%$ de 120 = 12, et $5\\%$ = 6, donc $15\\%$ = 18."
       ],
-      "correction": "$120 \\times 0,15 = 18$. Il y a 18 lits de soins intensifs.",
+      "correction": "Étape 1 : calculer 15\\% d'un nombre revient à le multiplier par $0,15$. Étape 2 : $120 \\times 0,15 = 18$. Étape 3 : il y a donc 18 lits de soins intensifs.",
       "estOfficiel": false,
       "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
     },
@@ -576,7 +576,7 @@
         "Multiplie l'effectif total par 0,2 : $80 \\times 0,2$.",
         "Résultat : 16 patients."
       ],
-      "correction": "$80 \\times 0,20 = 16$. Il y a 16 patients diabétiques sur les 80 hospitalisés.",
+      "correction": "Étape 1 : $20\\% = \\dfrac{20}{100} = 0,20$. Étape 2 : pour calculer 20\\% de 80, on multiplie : $80 \\times 0,20 = 16$. Étape 3 : il y a donc 16 patients diabétiques sur les 80 hospitalisés.",
       "estOfficiel": false,
       "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
     },
@@ -596,7 +596,7 @@
         "Ici $t = 25$, donc le multiplicateur est $1 + \\frac{25}{100}$.",
         "$1 + 0,25 = 1,25$."
       ],
-      "correction": "Augmenter de 25% revient à multiplier par $1 + \\frac{25}{100} = 1 + 0,25 = 1,25$. Le nouveau salaire s'obtient en multipliant l'ancien par 1,25.",
+      "correction": "Étape 1 : une augmentation de 25\\% correspond à un taux multiplicateur de $1 + \\frac{25}{100} = 1 + 0,25$. Étape 2 : $1 + 0,25 = 1,25$. Étape 3 : le nouveau salaire s'obtient donc en multipliant l'ancien salaire par $1,25$.",
       "estOfficiel": false,
       "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
     },
@@ -616,7 +616,7 @@
         "Le taux multiplicateur pour +10% est 1,10.",
         "Le multiplicateur global est $1,20 \\times 1,10$."
       ],
-      "correction": "$1,20 \\times 1,10 = 1,32$. Le budget a été multiplié par 1,32 au total, ce qui correspond à une augmentation globale de 32%.",
+      "correction": "Étape 1 : le multiplicateur pour +20\\% est $1,20$. Étape 2 : le multiplicateur pour +10\\% est $1,10$. Étape 3 : le multiplicateur global est $1,20 \\times 1,10 = 1,32$. Le budget a donc été multiplié par $1,32$, soit une augmentation globale de 32\\%.",
       "estOfficiel": false,
       "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
     },
@@ -636,7 +636,7 @@
         "$2 \\times 3^2 = 2 \\times 9 = 18$.",
         "$5 \\times 3 = 15$. Additionne : $18 + 15 - 1 = 32$."
       ],
-      "correction": "$f(3) = 2 \\times 3^2 + 5 \\times 3 - 1 = 2 \\times 9 + 15 - 1 = 18 + 15 - 1 = 32$.",
+      "correction": "Étape 1 : on remplace $x$ par 3 : $f(3) = 2 \\times 3^2 + 5 \\times 3 - 1$. Étape 2 : on calcule $3^2 = 9$, donc $2 \\times 9 = 18$. Étape 3 : $5 \\times 3 = 15$. Étape 4 : on additionne : $18 + 15 - 1 = 32$. Donc $f(3) = 32$.",
       "estOfficiel": false,
       "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
     },

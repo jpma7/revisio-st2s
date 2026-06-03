@@ -9,6 +9,8 @@ interface AnswerPanelProps {
   aide: string[];
   correction: string;
   onAnswered?: (correct: boolean) => void;
+  onNext?: () => void;
+  isLast?: boolean;
 }
 
 export default function AnswerPanel({
@@ -18,6 +20,8 @@ export default function AnswerPanel({
   aide,
   correction,
   onAnswered,
+  onNext,
+  isLast,
 }: AnswerPanelProps) {
   const [input, setInput] = useState("");
   const [status, setStatus] = useState<"idle" | "help" | "correct" | "wrong">("idle");
@@ -110,6 +114,17 @@ export default function AnswerPanel({
             className="rounded-2xl border-2 border-border bg-card px-6 py-3 text-base font-bold text-slate-light transition hover:bg-cream active:scale-95"
           >
             ↻ Recommencer
+          </button>
+        )}
+        {onNext && (status === "correct" || showCorrection) && (
+          <button
+            onClick={() => {
+              reset();
+              onNext();
+            }}
+            className="rounded-2xl bg-sage px-6 py-3 text-base font-bold text-white transition hover:bg-sage-dark active:scale-95 shadow-sm ml-auto"
+          >
+            {isLast ? "Terminer 🏁" : "Suivant →"}
           </button>
         )}
       </div>
