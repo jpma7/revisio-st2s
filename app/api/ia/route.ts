@@ -32,7 +32,17 @@ export async function POST(req: NextRequest) {
 
   const fullPrompt = `${contextBlock}\n\nQuestion de l'élève : ${question}\n\nRéponds uniquement à partir des documents ci-dessus. Si la réponse n'y est pas, affiche EXACTEMENT : "Je ne sais pas avec les documents fournis."`;
 
-  // 1. Essayer Ollama en local
+  const messages = [
+    { role: "system" as const, content: SYSTEM_PROMPT },
+    { role: "user" as const, content: fullPrompt },
+  ];
+
+  const commonParams = {
+    temperature: 0.0,
+    max_tokens: 1200,
+  };
+
+  // ─── 1. OLLAMA (local) — modèle le plus gros disponible ───
   const ollamaUrl = process.env.OLLAMA_URL || "http://localhost:11434";
   const ollamaModel = process.env.OLLAMA_MODEL || "qwen3-vl:30b";
 
@@ -64,74 +74,99 @@ export async function POST(req: NextRequest) {
       }
     }
   } catch {
-    // Ollama non disponible → fallback API externe
+    // Ollama non disponible → passer au fallback
   }
 
-  // 2. Fallback API externe (Mistral compatible)
-  const externalUrl = process.env.EXTERNAL_API_URL;
-  const externalKey = process.env.EXTERNAL_API_KEY;
-  const externalModel = process.env.EXTERNAL_API_MODEL || "mistral-medium-latest";
+  // ─── 2. MISTRAL API (fallback 1) — mistral-large-latest ───
+  const mistralUrl = process.env.MISTRAL_API_URL;
+  const mistralKey = process.env.MISTRAL_API_KEY;
+  const mistralModel = process.env.MISTRAL_API_MODEL || "mistral-large-latest";
 
-  if (!externalUrl || !externalKey) {
-    return NextResponse.json(
-      {
-        answer: "Je ne sais pas avec les documents fournis.",
-        source: "Aucun modèle IA disponible (Ollama éteint et pas d'API externe configurée).",
-        usedOllama: false,
-      },
-      { status: 200 }
-    );
-  }
-
-  try {
-    const apiRes = await fetch(externalUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${externalKey}`,
-      },
-      body: JSON.stringify({
-        model: externalModel,
-        messages: [
-          { role: "system", content: SYSTEM_PROMPT },
-          { role: "user", content: fullPrompt },
-        ],
-        temperature: 0.0,
-        max_tokens: 1200,
-      }),
-    });
-
-    if (!apiRes.ok) {
-      return NextResponse.json(
-        {
-          answer: "Je ne sais pas avec les documents fournis.",
-          source: `Erreur API externe (${apiRes.status})`,
-          usedOllama: false,
+  if (mistralUrl && mistralKey) {
+    try {
+      const res = await fetch(mistralUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${mistralKey}`,
         },
-        { status: 200 }
-      );
+        body: JSON.stringify({
+          model: mistralModel,
+          messages,
+          ...commonParams,
+        }),
+      });
+
+      if (res.ok) {
+        const data = (await res.json()) as {
+          choices?: { message?: { content?: string } }[];
+        };
+        const answer =
+          data.choices?.[0]?.message?.content?.trim() ||
+          "Je ne sais pas avec les documents fournis.";
+
+        return NextResponse.json({
+          answer,
+          source: `Mistral (${mistralModel}) + documents internes Révisio`,
+          usedOllama: false,
+        });
+      }
+    } catch {
+      // Mistral indisponible → passer au fallback suivant
     }
-
-    const apiData = (await apiRes.json()) as {
-      choices?: { message?: { content?: string } }[];
-    };
-    const answer =
-      apiData.choices?.[0]?.message?.content?.trim() ||
-      "Je ne sais pas avec les documents fournis.";
-
-    return NextResponse.json({
-      answer,
-      source: `API externe + documents internes Révisio`,
-      usedOllama: false,
-    });
-  } catch {
-    return NextResponse.json(
-      {
-        answer: "Je ne sais pas avec les documents fournis.",
-        source: "Erreur de connexion à l'API externe.",
-        usedOllama: false,
-      },
-      { status: 200 }
-    );
   }
+
+  // ─── 3. OPENROUTER (fallback 2) — accès à Claude, GPT-4, Llama, Qwen… ───
+  // OpenRouter offre une clé gratuite et des modèles très performants en maths.
+  const openrouterUrl = process.env.OPENROUTER_API_URL;
+  const openrouterKey = process.env.OPENROUTER_API_KEY;
+  const openrouterModel =
+    process.env.OPENROUTER_API_MODEL || "anthropic/claude-3.5-sonnet";
+
+  if (openrouterUrl && openrouterKey) {
+    try {
+      const res = await fetch(openrouterUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${openrouterKey}`,
+          "HTTP-Referer": "https://revisio-st2s.netlify.app",
+          "X-Title": "Révisio ST2S",
+        },
+        body: JSON.stringify({
+          model: openrouterModel,
+          messages,
+          ...commonParams,
+        }),
+      });
+
+      if (res.ok) {
+        const data = (await res.json()) as {
+          choices?: { message?: { content?: string } }[];
+        };
+        const answer =
+          data.choices?.[0]?.message?.content?.trim() ||
+          "Je ne sais pas avec les documents fournis.";
+
+        return NextResponse.json({
+          answer,
+          source: `OpenRouter (${openrouterModel}) + documents internes Révisio`,
+          usedOllama: false,
+        });
+      }
+    } catch {
+      // OpenRouter indisponible
+    }
+  }
+
+  // ─── Aucun modèle disponible ───
+  return NextResponse.json(
+    {
+      answer: "Je ne sais pas avec les documents fournis.",
+      source:
+        "Aucun modèle IA disponible. Vérifie qu'Ollama est lancé ou qu'une clé API est configurée.",
+      usedOllama: false,
+    },
+    { status: 200 }
+  );
 }
