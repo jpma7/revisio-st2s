@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import programmeData from "@/data/exercises/programme-st2s.json";
 import ExerciseCard from "@/components/ExerciseCard";
 import AnswerPanel from "@/components/AnswerPanel";
@@ -66,6 +66,14 @@ export default function ReviserClient() {
     searchParams.get("exercise")
   );
   const [, forceUpdate] = useState(0);
+  const mainRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to exercise area on mobile when selecting
+  useEffect(() => {
+    if (selectedId && mainRef.current && window.innerWidth < 1024) {
+      mainRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [selectedId]);
 
   // Refresh UI when localStorage changes (e.g. from AnswerPanel)
   const refreshProgress = useCallback(() => {
@@ -187,7 +195,7 @@ export default function ReviserClient() {
       </div>
 
       {/* Main exercise area */}
-      <div className="lg:col-span-2">
+      <div ref={mainRef} className="lg:col-span-2 scroll-mt-24">
         {selected ? (
           <div className="flex flex-col gap-5 animate-fade-in">
             <div className="rounded-3xl border-2 border-border bg-card p-6 shadow-sm">

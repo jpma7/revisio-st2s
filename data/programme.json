@@ -1,7 +1,28 @@
 {
   "programme": {
-    "titre": "Mathématiques – 1re ST2S",
-    "source": "Programme officiel de l'enseignement de mathématiques en classe de première de la série ST2S (B.O. spécial n° 6 du 5 août 2021)",
+    "titre": "Mathématiques – 1re ST2S – Épreuve anticipée 2026",
+    "source": "Programme officiel de l'enseignement de mathématiques en classe de première de la série ST2S (B.O. spécial n° 1 du 22 janvier 2019)",
+    "epreuve": {
+      "titre": "Épreuve anticipée de mathématiques – session 2026",
+      "niveau": "Première technologique (toutes séries)",
+      "duree": "2 heures",
+      "coefficient": 2,
+      "calculatrice": "Non autorisée",
+      "structure": [
+        {
+          "partie": "Automatismes",
+          "points": 6,
+          "format": "QCM sans calculatrice",
+          "contenu": "Calcul numérique et algébrique, proportions et pourcentages, lectures graphiques, tableurs"
+        },
+        {
+          "partie": "Exercices",
+          "points": 14,
+          "format": "2 à 3 exercices de raisonnement",
+          "contenu": "Suites, fonctions, dérivation, statistiques, probabilités conditionnelles, Bernoulli"
+        }
+      ]
+    },
     "domaines": [
       {
         "titre": "Analyse",

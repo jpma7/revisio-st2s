@@ -19,6 +19,27 @@ export default function Home() {
 
       {/* Main cards */}
       <main className="flex-1 px-6 pb-6 sm:px-10">
+        <div className="max-w-5xl mx-auto mb-5">
+          <Link
+            href="/revision-express"
+            className="group block rounded-3xl border-2 border-terracotta bg-terracotta p-6 text-center shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+          >
+            <p className="text-xs font-bold uppercase tracking-wider text-white/80 mb-1">
+              Bac dans 1 semaine
+            </p>
+            <h3 className="font-display text-2xl text-white mb-2">
+              🚀 Révision express
+            </h3>
+            <p className="text-sm text-white/90 max-w-md mx-auto leading-relaxed">
+              Session intensive personnalisée : on détecte tes lacunes et on
+              enchaîne les exercices ciblés.
+            </p>
+            <span className="mt-3 inline-block text-sm font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity">
+              C’est parti →
+            </span>
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
           <HomeCard
             href="/programme"
@@ -31,7 +52,7 @@ export default function Home() {
             href="/reviser"
             emoji="✏️"
             title="Réviser"
-            description="24 exercices corrigés pas à pas, un par notion du programme."
+            description="40 exercices corrigés pas à pas, un par notion du programme."
             accent="border-sage/20 hover:border-sage"
           />
           <HomeCard

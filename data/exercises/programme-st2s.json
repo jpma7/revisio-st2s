@@ -352,11 +352,11 @@
       "reponseAttendue": 5.5,
       "unite": "points",
       "aide": [
-        "Q1 est la médiane de la première moitié (8, 9, 10, 12) : /2 = 9,5$.",
-        "Q3 est la médiane de la seconde moitié (13, 14, 16, 18) : /2 = 15$.",
-        "Écart interquartile = Q3 - Q1 =  - 9,5 = 5,5$."
+        "Q1 est la médiane de la première moitié (8, 9, 10, 12) : (9+10)/2 = 9,5.",
+        "Q3 est la médiane de la seconde moitié (13, 14, 16, 18) : (14+16)/2 = 15.",
+        "Écart interquartile = Q3 - Q1 = 15 - 9,5 = 5,5."
       ],
-      "correction": "Les données sont ordonnées. Avec 8 valeurs : Q1 est la médiane des 4 premières (8, 9, 10, 12) = /2 = 9,5$. Q3 est la médiane des 4 dernières (13, 14, 16, 18) = /2 = 15$. Écart interquartile =  - 9,5 = 5,5$ points.",
+      "correction": "Les données sont ordonnées. Avec 8 valeurs : Q1 est la médiane des 4 premières (8, 9, 10, 12) : (9+10)/2 = 9,5. Q3 est la médiane des 4 dernières (13, 14, 16, 18) : (14+16)/2 = 15. Écart interquartile = 15 - 9,5 = 5,5 points.",
       "estOfficiel": false,
       "source": "Exercice créé pour le programme ST2S – Statistique"
     },
@@ -521,24 +521,404 @@
       "source": "Exercice créé pour le programme ST2S – Bernoulli"
     },
     {
-      "id": "bernoulli-04",
-      "notion": "Épreuves de Bernoulli et variables aléatoires",
-      "domaine": "Statistiques et probabilités",
-      "chapitre": "bernoulli-variables-aleatoires",
-      "titre": "Loi binomiale",
-      "difficulte": 3,
-      "question": "Une maladie touche 10% de la population. On choisit 4 personnes au hasard. Quelle est la probabilité qu'au moins une personne soit malade ? (arrondir au centième)",
+      "id": "automatismes-01",
+      "notion": "Automatismes",
+      "domaine": "Automatismes",
+      "chapitre": "automatismes",
+      "titre": "Conversion d'unités",
+      "difficulte": 1,
+      "question": "Une perfusion contient 2,5 L de sérum. Combien de centilitres (cL) cela représente-t-il ?",
       "typeReponse": "nombre",
-      "reponseAttendue": 0.34,
+      "reponseAttendue": 250,
+      "unite": "cL",
+      "aide": [
+        "1 L = 100 cL.",
+        "Pour convertir des litres en centilitres, on multiplie par 100.",
+        "Calcule $2,5 \\times 100$."
+      ],
+      "correction": "1 L = 100 cL, donc $2,5 \\times 100 = 250$ cL. La perfusion contient 250 cL de sérum.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
+    },
+    {
+      "id": "automatismes-02",
+      "notion": "Automatismes",
+      "domaine": "Automatismes",
+      "chapitre": "automatismes",
+      "titre": "Pourcentage de base",
+      "difficulte": 1,
+      "question": "Un hôpital compte 120 lits. 15% des lits sont réservés aux soins intensifs. Combien de lits de soins intensifs y a-t-il ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 18,
+      "unite": "lits",
+      "aide": [
+        "Calculer 15% d'un nombre revient à multiplier ce nombre par 0,15.",
+        "$120 \\times 0,15 = 18$.",
+        "Vérifie : $10\\%$ de 120 = 12, et $5\\%$ = 6, donc $15\\%$ = 18."
+      ],
+      "correction": "$120 \\times 0,15 = 18$. Il y a 18 lits de soins intensifs.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
+    },
+    {
+      "id": "automatismes-03",
+      "notion": "Automatismes",
+      "domaine": "Automatismes",
+      "chapitre": "automatismes",
+      "titre": "Proportion simple",
+      "difficulte": 1,
+      "question": "Sur 80 patients hospitalisés, 20% sont diabétiques. Combien de patients diabétiques cela représente-t-il ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 16,
+      "unite": "patients",
+      "aide": [
+        "$20\\% = \\frac{20}{100} = 0,2$.",
+        "Multiplie l'effectif total par 0,2 : $80 \\times 0,2$.",
+        "Résultat : 16 patients."
+      ],
+      "correction": "$80 \\times 0,20 = 16$. Il y a 16 patients diabétiques sur les 80 hospitalisés.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
+    },
+    {
+      "id": "automatismes-04",
+      "notion": "Automatismes",
+      "domaine": "Automatismes",
+      "chapitre": "automatismes",
+      "titre": "Taux multiplicateur",
+      "difficulte": 1,
+      "question": "Le salaire d'un soignant augmente de 25%. Par quel nombre doit-on multiplier l'ancien salaire pour obtenir le nouveau ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 1.25,
       "unite": "",
       "aide": [
-        "'Au moins une' = 1 - 'aucune'.",
-        "P(aucune) = $0,9^4$ (tous non malades).",
-        "$0,9^4 = 0,6561$. Donc $1 - 0,6561 = 0,3439$."
+        "Augmenter de $t\\%$ revient à multiplier par $1 + \\frac{t}{100}$.",
+        "Ici $t = 25$, donc le multiplicateur est $1 + \\frac{25}{100}$.",
+        "$1 + 0,25 = 1,25$."
       ],
-      "correction": "P(au moins une malade) = 1 - P(aucune malade) = $1 - 0,9^4 = 1 - 0,6561 = 0,3439$, soit environ 0,34.",
+      "correction": "Augmenter de 25% revient à multiplier par $1 + \\frac{25}{100} = 1 + 0,25 = 1,25$. Le nouveau salaire s'obtient en multipliant l'ancien par 1,25.",
       "estOfficiel": false,
-      "source": "Exercice créé pour le programme ST2S – Bernoulli"
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
+    },
+    {
+      "id": "automatismes-05",
+      "notion": "Automatismes",
+      "domaine": "Automatismes",
+      "chapitre": "automatismes",
+      "titre": "Évolutions successives (multiplicateur global)",
+      "difficulte": 2,
+      "question": "Le budget d'un service augmente de 20% puis de 10%. Par quel nombre total le budget a-t-il été multiplié ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 1.32,
+      "unite": "",
+      "aide": [
+        "Le taux multiplicateur pour +20% est 1,20.",
+        "Le taux multiplicateur pour +10% est 1,10.",
+        "Le multiplicateur global est $1,20 \\times 1,10$."
+      ],
+      "correction": "$1,20 \\times 1,10 = 1,32$. Le budget a été multiplié par 1,32 au total, ce qui correspond à une augmentation globale de 32%.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
+    },
+    {
+      "id": "automatismes-06",
+      "notion": "Automatismes",
+      "domaine": "Automatismes",
+      "chapitre": "automatismes",
+      "titre": "Calcul algébrique",
+      "difficulte": 1,
+      "question": "Soit $f(x) = 2x^2 + 5x - 1$. Calcule $f(3)$.",
+      "typeReponse": "nombre",
+      "reponseAttendue": 32,
+      "unite": "",
+      "aide": [
+        "Remplace $x$ par 3 dans l'expression.",
+        "$2 \\times 3^2 = 2 \\times 9 = 18$.",
+        "$5 \\times 3 = 15$. Additionne : $18 + 15 - 1 = 32$."
+      ],
+      "correction": "$f(3) = 2 \\times 3^2 + 5 \\times 3 - 1 = 2 \\times 9 + 15 - 1 = 18 + 15 - 1 = 32$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
+    },
+    {
+      "id": "pourcentages-01",
+      "notion": "Pourcentages et évolutions",
+      "domaine": "Proportions et pourcentages",
+      "chapitre": "pourcentages-evolutions",
+      "titre": "Pourcentage d'augmentation (prix médicament)",
+      "difficulte": 1,
+      "question": "Un médicament coûtait 20 €. Après réforme, il coûte 25 €. Quel est le pourcentage d'augmentation ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 25,
+      "unite": "%",
+      "aide": [
+        "Formule : $\\frac{\\text{nouveau} - \\text{ancien}}{\\text{ancien}} \\times 100$.",
+        "$\\frac{25 - 20}{20} = \\frac{5}{20} = 0,25$.",
+        "$0,25 \\times 100 = 25\\%$."
+      ],
+      "correction": "$\\frac{25 - 20}{20} = \\frac{5}{20} = 0,25 = 25\\%$. Le prix a augmenté de 25%.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Pourcentages"
+    },
+    {
+      "id": "pourcentages-02",
+      "notion": "Pourcentages et évolutions",
+      "domaine": "Proportions et pourcentages",
+      "chapitre": "pourcentages-evolutions",
+      "titre": "Évolution inverse (prix avant baisse)",
+      "difficulte": 2,
+      "question": "Après une baisse de 30%, un traitement coûte 14 €. Quel était le prix avant la baisse ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 20,
+      "unite": "€",
+      "aide": [
+        "Baisser de 30% revient à multiplier par $1 - 0,30 = 0,70$.",
+        "Soit $P$ le prix avant. On a $P \\times 0,70 = 14$.",
+        "$P = \\frac{14}{0,70} = 20$ €."
+      ],
+      "correction": "$\\frac{14}{0,70} = 20$. Le prix avant la baisse était de 20 €.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Pourcentages"
+    },
+    {
+      "id": "pourcentages-03",
+      "notion": "Pourcentages et évolutions",
+      "domaine": "Proportions et pourcentages",
+      "chapitre": "pourcentages-evolutions",
+      "titre": "Pourcentage de pourcentage (vaccination)",
+      "difficulte": 2,
+      "question": "Dans une population, 80% des personnes sont vaccinées. Parmi les vaccinées, 90% sont protégées contre la grippe. Quel est le pourcentage de personnes protégées dans la population totale ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 72,
+      "unite": "%",
+      "aide": [
+        "On cherche 90% de 80%.",
+        "$0,90 \\times 0,80 = 0,72$.",
+        "$0,72 = 72\\%$."
+      ],
+      "correction": "$0,90 \\times 0,80 = 0,72 = 72\\%$. Dans la population totale, 72% des personnes sont protégées contre la grippe.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Pourcentages"
+    },
+    {
+      "id": "statistique-06",
+      "notion": "Statistique",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "statistique",
+      "titre": "Moyenne pondérée à partir d'un tableau",
+      "difficulte": 2,
+      "question": "Les âges des patients hospitalisés dans un service sont répartis comme suit : 20 patients ont 30 ans, 40 patients ont 45 ans et 40 patients ont 60 ans. Quel est l'âge moyen des patients ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 48,
+      "unite": "ans",
+      "aide": [
+        "Moyenne pondérée = $\\frac{\\sum (\\text{effectif} \\times \\text{valeur})}{\\text{effectif total}}$.",
+        "Somme = $20 \\times 30 + 40 \\times 45 + 40 \\times 60 = 600 + 1800 + 2400 = 4800$.",
+        "Effectif total = $20 + 40 + 40 = 100$. Moyenne = $\\frac{4800}{100} = 48$."
+      ],
+      "correction": "Somme pondérée = $20 \\times 30 + 40 \\times 45 + 40 \\times 60 = 600 + 1800 + 2400 = 4800$. Effectif total = 100. Moyenne = $\\frac{4800}{100} = 48$ ans.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Statistique"
+    },
+    {
+      "id": "fonctions-06",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Lecture graphique (image)",
+      "difficulte": 1,
+      "question": "La concentration $C$ (en mg/L) d'un médicament en fonction du temps $t$ (en heures) passe par le point $(2 ; 6)$. Quelle est la concentration après 2 heures ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 6,
+      "unite": "mg/L",
+      "aide": [
+        "L'image de 2 est l'ordonnée du point d'abscisse 2 sur la courbe.",
+        "Le point (2 ; 6) appartient à la courbe.",
+        "Donc $C(2) = 6$ mg/L."
+      ],
+      "correction": "Le point de la courbe d'abscisse 2 a pour ordonnée 6. La concentration après 2 heures est donc de 6 mg/L.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Fonctions"
+    },
+    {
+      "id": "probabilites-05",
+      "notion": "Probabilités conditionnelles",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "probabilites-conditionnelles",
+      "titre": "Arbre pondéré et probabilité totale (vaccination)",
+      "difficulte": 2,
+      "question": "Dans une population, 60% des personnes sont vaccinées. Parmi les vaccinées, 10% sont malades. Parmi les non vaccinées, 40% sont malades. Quel est le pourcentage de personnes malades dans la population totale ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 22,
+      "unite": "%",
+      "aide": [
+        "Utilise la formule des probabilités totales.",
+        "$P(M) = P(V) \\times P_V(M) + P(\\bar{V}) \\times P_{\\bar{V}}(M)$.",
+        "$P(M) = 0,60 \\times 0,10 + 0,40 \\times 0,40 = 0,06 + 0,16 = 0,22 = 22\\%$."
+      ],
+      "correction": "Par la formule des probabilités totales : $P(M) = 0,60 \\times 0,10 + 0,40 \\times 0,40 = 0,06 + 0,16 = 0,22 = 22\\%$. Il y a 22% de personnes malades dans la population totale.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Probabilités conditionnelles"
+    },
+    {
+      "id": "automatismes-07",
+      "notion": "Automatismes",
+      "domaine": "Automatismes",
+      "chapitre": "automatismes",
+      "titre": "Lecture graphique – antécédents",
+      "difficulte": 1,
+      "question": "La courbe d'une fonction $f$ passe par les points $A(0; 2)$, $B(1; 5)$, $C(2; 5)$ et $D(3; 2)$. Combien d'antécédents le nombre 5 admet-il par la fonction $f$ ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 2,
+      "unite": "",
+      "aide": [
+        "Un antécédent de 5 est une valeur de $x$ telle que $f(x) = 5$.",
+        "Cherche les points dont l'ordonnée est 5 : ce sont $B(1; 5)$ et $C(2; 5)$.",
+        "Il y a donc 2 antécédents."
+      ],
+      "correction": "Les points dont l'ordonnée est 5 sont $B(1; 5)$ et $C(2; 5)$. Le nombre 5 admet donc 2 antécédents par $f$ : $x = 1$ et $x = 2$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
+    },
+    {
+      "id": "automatismes-08",
+      "notion": "Automatismes",
+      "domaine": "Automatismes",
+      "chapitre": "automatismes",
+      "titre": "Tableau de variations – maximum",
+      "difficulte": 1,
+      "question": "On donne le tableau de variations d'une fonction $f$ : sur $[0; 2]$, $f$ croît de 4 à 10 ; sur $[2; 5]$, $f$ décroît de 10 à 1. Quelle est la valeur maximale de $f$ ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 10,
+      "unite": "",
+      "aide": [
+        "Sur $[0; 2]$, la fonction passe de 4 à 10 : le max provisoire est 10.",
+        "Sur $[2; 5]$, elle descend de 10 à 1 : elle ne dépasse plus 10.",
+        "Le maximum global est donc 10."
+      ],
+      "correction": "La fonction augmente jusqu'à 10 sur $[0; 2]$, puis dimin ensuite sans jamais remonter au-dessus de 10. La valeur maximale de $f$ est donc 10.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
+    },
+    {
+      "id": "automatismes-09",
+      "notion": "Automatismes",
+      "domaine": "Automatismes",
+      "chapitre": "automatismes",
+      "titre": "Formule tableur – MOYENNE",
+      "difficulte": 1,
+      "question": "Dans une cellule de tableur on écrit =MOYENNE(A1:A5). Les valeurs des cellules A1 à A5 sont : 8, 12, 10, 14, 16. Quel nombre s'affiche dans la cellule ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 12,
+      "unite": "",
+      "aide": [
+        "La fonction MOYENNE calcule la moyenne arithmétique.",
+        "Somme = $8 + 12 + 10 + 14 + 16 = 60$.",
+        "Moyenne = $60 / 5 = 12$."
+      ],
+      "correction": "La moyenne est $\frac{8 + 12 + 10 + 14 + 16}{5} = \frac{60}{5} = 12$. La cellule affiche 12.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Automatismes"
+    },
+    {
+      "id": "statistique-07",
+      "notion": "Statistique",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "statistique",
+      "titre": "Médiane depuis un tableau",
+      "difficulte": 1,
+      "question": "Le tableau ci-dessous donne le nombre de patients accueillis chaque jour dans un service : Lundi 12, Mardi 15, Mercredi 10, Jeudi 18, Vendredi 20. Quelle est la médiane de cette série ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 15,
+      "unite": "patients",
+      "aide": [
+        "Range les valeurs dans l'ordre croissant : 10, 12, 15, 18, 20.",
+        "Il y a 5 valeurs. La médiane est la valeur centrale (la 3ème).",
+        "La 3ème valeur est 15."
+      ],
+      "correction": "Valeurs ordonnées : 10, 12, 15, 18, 20. Avec 5 valeurs, la médiane est la 3ème, soit 15 patients.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Statistique"
+    },
+    {
+      "id": "statistique-08",
+      "notion": "Statistique",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "statistique",
+      "titre": "Histogramme – classe modale",
+      "difficulte": 1,
+      "question": "L'histogramme des durées d'hospitalisation (en jours) montre les effectifs suivants : $[0;2[$ : 4 patients, $[2;4[$ : 12 patients, $[4;6[$ : 8 patients, $[6;8[$ : 2 patients. Quelle est la classe modale ? (donner sous la forme $[a;b[$ )",
+      "typeReponse": "texte",
+      "reponseAttendue": "[2;4[",
+      "unite": "jours",
+      "aide": [
+        "La classe modale est celle qui contient le plus grand effectif.",
+        "Compare les effectifs : 4, 12, 8, 2.",
+        "Le plus grand effectif est 12, qui correspond à $[2;4[$."
+      ],
+      "correction": "La classe $[2;4[$ compte 12 patients, c'est l'effectif le plus élevé. La classe modale est donc $[2;4[$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Statistique"
+    },
+    {
+      "id": "statistique-09",
+      "notion": "Statistique",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "statistique",
+      "titre": "Boîte à moustaches – lecture",
+      "difficulte": 1,
+      "question": "La boîte à moustaches des temps d'attente (en minutes) présente : minimum = 5, Q1 = 10, médiane = 15, Q3 = 25, maximum = 60. Quel est le pourcentage approximatif de patients attendant entre Q1 et Q3 ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 50,
+      "unite": "%",
+      "aide": [
+        "Par définition, la boîte à moustaches représente les 50% centraux des données.",
+        "L'intervalle $[Q1; Q3]$ contient environ 50% des valeurs.",
+        "La réponse est donc 50%."
+      ],
+      "correction": "Par définition des quartiles, 50% des données se situent entre Q1 et Q3. Environ 50% des patients attendent entre 10 et 25 minutes.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Statistique"
+    },
+    {
+      "id": "fonctions-07",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Maximum lu sur un graphique",
+      "difficulte": 1,
+      "question": "La courbe d'une fonction $f$ définie sur $[0; 6]$ est croissante sur $[0; 3]$ et décroissante sur $[3; 6]$. On sait que $f(0)=1$, $f(3)=10$ et $f(6)=4$. Quelle est la valeur maximale de $f$ sur $[0; 6]$ ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 10,
+      "unite": "",
+      "aide": [
+        "La fonction monte jusqu'à $x=3$, puis redescend.",
+        "Le point le plus haut de la courbe est donc en $x=3$.",
+        "$f(3) = 10$."
+      ],
+      "correction": "La fonction est croissante jusqu'à $x=3$ puis décroissante. Son maximum sur $[0; 6]$ est atteint en $x=3$ et vaut $f(3) = 10$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Fonctions"
+    },
+    {
+      "id": "probabilites-06",
+      "notion": "Probabilités conditionnelles",
+      "domaine": "Statistiques et probabilités",
+      "chapitre": "probabilites-conditionnelles",
+      "titre": "Arbre pondéré – test de dépistage",
+      "difficulte": 2,
+      "question": "Un arbre pondéré représente la situation suivante : $P(M) = 0,3$ (maladie) et $P(\bar{M}) = 0,7$. Deuxième niveau : si $M$, $P(T) = 0,9$ (test positif) ; si $\bar{M}$, $P(T) = 0,2$. Quelle est la probabilité qu'une personne ait un test positif ? (en %)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 41,
+      "unite": "%",
+      "aide": [
+        "Utilise la formule des probabilités totales.",
+        "$P(T) = P(M) \\times P_M(T) + P(\bar{M}) \\times P_{\bar{M}}(T)$.",
+        "$P(T) = 0,3 \\times 0,9 + 0,7 \\times 0,2 = 0,27 + 0,14 = 0,41 = 41\\%$."
+      ],
+      "correction": "Par la formule des probabilités totales : $P(T) = 0,3 \\times 0,9 + 0,7 \\times 0,2 = 0,27 + 0,14 = 0,41 = 41\\%$. La probabilité d'un test positif est 41%.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Probabilités conditionnelles"
     }
   ]
 }

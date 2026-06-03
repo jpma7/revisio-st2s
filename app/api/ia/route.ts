@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
 
   // ─── 1. OLLAMA (local uniquement) ────────────────────
   const ollamaUrl = process.env.OLLAMA_URL || "http://localhost:11434";
-  const ollamaModel = process.env.OLLAMA_MODEL || "qwen3-vl:30b";
+  const ollamaModel = process.env.OLLAMA_MODEL || "llama3.1:8b";
 
   try {
     const ollamaRes = await fetch(`${ollamaUrl}/api/generate`, {

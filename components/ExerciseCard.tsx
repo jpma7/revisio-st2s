@@ -23,10 +23,13 @@ export default function ExerciseCard({
 }: ExerciseCardProps) {
   const notionColors: Record<string, string> = {
     Automatismes: "bg-violet-100 text-violet-700 border-violet-200",
-    Pourcentages: "bg-rose-100 text-rose-700 border-rose-200",
-    Suites: "bg-amber-100 text-amber-700 border-amber-200",
-    Fonctions: "bg-teal-100 text-teal-700 border-teal-200",
-    Probabilités: "bg-indigo-100 text-indigo-700 border-indigo-200",
+    "Pourcentages et évolutions": "bg-rose-100 text-rose-700 border-rose-200",
+    "Suites numériques": "bg-amber-100 text-amber-700 border-amber-200",
+    "Fonctions de la variable réelle": "bg-teal-100 text-teal-700 border-teal-200",
+    Dérivation: "bg-orange-100 text-orange-700 border-orange-200",
+    Statistique: "bg-emerald-100 text-emerald-700 border-emerald-200",
+    "Probabilités conditionnelles": "bg-indigo-100 text-indigo-700 border-indigo-200",
+    "Épreuves de Bernoulli et variables aléatoires": "bg-sky-100 text-sky-700 border-sky-200",
   };
 
   return (

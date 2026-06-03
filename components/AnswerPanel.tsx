@@ -30,12 +30,24 @@ export default function AnswerPanel({
       .replace(/\s/g, "")
       .replace(/,/g, ".")
       .replace(/€/g, "")
-      .replace(/%/g, "");
+      .replace(/%/g, "")
+      .replace(/∞/g, "inf")
+      .replace(/infinity/g, "inf");
   }
 
   function checkAnswer() {
     const expected = String(reponseAttendue);
-    const ok = normalize(input) === normalize(expected);
+    let ok = false;
+    if (typeReponse === "nombre") {
+      const numInput = Number(normalize(input));
+      const numExpected = Number(normalize(expected));
+      ok =
+        !Number.isNaN(numInput) &&
+        !Number.isNaN(numExpected) &&
+        Math.abs(numInput - numExpected) < 1e-9;
+    } else {
+      ok = normalize(input) === normalize(expected);
+    }
     setStatus(ok ? "correct" : "wrong");
     onAnswered?.(ok);
   }
