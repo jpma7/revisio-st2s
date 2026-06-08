@@ -12,9 +12,8 @@ export default function LoginPage() {
     e.preventDefault();
     if (password === 'PapaPourLana') {
       const hash = btoa(password);
-      document.cookie = `site-auth=${hash}; path=/; max-age=${60 * 60 * 24 * 30}`; // 30 jours
-      router.push('/');
-      router.refresh();
+      document.cookie = `site-auth=${hash}; path=/; max-age=${60 * 60 * 24 * 30}; SameSite=Lax`; // 30 jours
+      window.location.href = '/'; // recharge complet pour que le middleware voie le cookie
     } else {
       setError('Mot de passe incorrect');
     }
