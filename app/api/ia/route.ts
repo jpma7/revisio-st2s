@@ -42,7 +42,51 @@ export async function POST(req: NextRequest) {
     max_tokens: 1200,
   };
 
-  // ─── 1. OLLAMA (local uniquement) ────────────────────
+  // Helper : détecte une vraie clé API (pas vide, pas placeholder)
+  function isRealKey(key: string | undefined): key is string {
+    return !!key && key.length > 20 && !key.includes("XXXX");
+  }
+
+  // ─── 1. OPENAI (ChatGPT) — priorité si clé valide ─────
+  const openaiUrl = process.env.OPENAI_API_URL;
+  const openaiKey = process.env.OPENAI_API_KEY;
+  const openaiModel = process.env.OPENAI_API_MODEL || "gpt-4o";
+
+  if (openaiUrl && isRealKey(openaiKey)) {
+    try {
+      const res = await fetch(openaiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${openaiKey}`,
+        },
+        body: JSON.stringify({
+          model: openaiModel,
+          messages,
+          ...commonParams,
+        }),
+      });
+
+      if (res.ok) {
+        const data = (await res.json()) as {
+          choices?: { message?: { content?: string } }[];
+        };
+        const answer =
+          data.choices?.[0]?.message?.content?.trim() ||
+          "Je ne sais pas avec les documents fournis.";
+
+        return NextResponse.json({
+          answer,
+          source: `OpenAI (${openaiModel}) + documents internes Révisio`,
+          usedOllama: false,
+        });
+      }
+    } catch {
+      // OpenAI indisponible → passer au fallback
+    }
+  }
+
+  // ─── 2. OLLAMA (local uniquement) ────────────────────
   const ollamaUrl = process.env.OLLAMA_URL || "http://localhost:11434";
   const ollamaModel = process.env.OLLAMA_MODEL || "llama3.1:8b";
 
@@ -77,51 +121,12 @@ export async function POST(req: NextRequest) {
     // Ollama non disponible → passer au fallback
   }
 
-  // ─── 2. OPENAI (ChatGPT) — excellent en maths ────────
-  const openaiUrl = process.env.OPENAI_API_URL;
-  const openaiKey = process.env.OPENAI_API_KEY;
-  const openaiModel = process.env.OPENAI_API_MODEL || "gpt-4o";
-
-  if (openaiUrl && openaiKey) {
-    try {
-      const res = await fetch(openaiUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${openaiKey}`,
-        },
-        body: JSON.stringify({
-          model: openaiModel,
-          messages,
-          ...commonParams,
-        }),
-      });
-
-      if (res.ok) {
-        const data = (await res.json()) as {
-          choices?: { message?: { content?: string } }[];
-        };
-        const answer =
-          data.choices?.[0]?.message?.content?.trim() ||
-          "Je ne sais pas avec les documents fournis.";
-
-        return NextResponse.json({
-          answer,
-          source: `OpenAI (${openaiModel}) + documents internes Révisio`,
-          usedOllama: false,
-        });
-      }
-    } catch {
-      // OpenAI indisponible → passer au fallback suivant
-    }
-  }
-
   // ─── 3. GROQ (cloud — GRATUIT, ultra-rapide) ────────
   const groqUrl = process.env.GROQ_API_URL;
   const groqKey = process.env.GROQ_API_KEY;
   const groqModel = process.env.GROQ_API_MODEL || "llama-3.3-70b-versatile";
 
-  if (groqUrl && groqKey) {
+  if (groqUrl && isRealKey(groqKey)) {
     try {
       const res = await fetch(groqUrl, {
         method: "POST",
@@ -161,7 +166,7 @@ export async function POST(req: NextRequest) {
   const openrouterModel =
     process.env.OPENROUTER_API_MODEL || "anthropic/claude-3.5-sonnet";
 
-  if (openrouterUrl && openrouterKey) {
+  if (openrouterUrl && isRealKey(openrouterKey)) {
     try {
       const res = await fetch(openrouterUrl, {
         method: "POST",
@@ -202,7 +207,7 @@ export async function POST(req: NextRequest) {
     {
       answer: "Je ne sais pas avec les documents fournis.",
       source:
-        "Aucun modèle IA disponible. Vérifie qu'Ollama est lancé sur ton ordinateur, ou qu'une clé API est configurée.",
+        "Aucun modèle IA disponible. Vérifie qu'une clé API est configurée dans .env.local (OpenAI, Groq ou OpenRouter).",
       usedOllama: false,
     },
     { status: 200 }
