@@ -52,7 +52,7 @@ export default function Home() {
             href="/reviser"
             emoji="✏️"
             title="Réviser"
-            description="40 exercices corrigés pas à pas, un par notion du programme."
+            description="52 exercices corrigés pas à pas, un par notion du programme."
             accent="border-sage/20 hover:border-sage"
           />
           <HomeCard

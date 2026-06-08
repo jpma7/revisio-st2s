@@ -919,6 +919,126 @@
       "correction": "Par la formule des probabilités totales : $P(T) = 0,3 \\times 0,9 + 0,7 \\times 0,2 = 0,27 + 0,14 = 0,41 = 41\\%$. La probabilité d'un test positif est 41%.",
       "estOfficiel": false,
       "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Probabilités conditionnelles"
+    },
+    {
+      "id": "fonctions-08",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Signe d'un polynôme du second degré",
+      "difficulte": 2,
+      "question": "On considère le polynôme $f(x) = x^2 - 6x + 8$. Sachant que ses racines sont 2 et 4, quel est le signe de $f(3)$ ? (Répondre par 'positif' ou 'négatif')",
+      "typeReponse": "texte",
+      "reponseAttendue": "négatif",
+      "unite": "",
+      "aide": [
+        "Le coefficient $a = 1$ est positif. Le polynôme est du signe de $a$ à l'extérieur des racines.",
+        "À l'intérieur des racines (entre 2 et 4), le polynôme est négatif.",
+        "3 est compris entre 2 et 4, donc $f(3)$ est négatif."
+      ],
+      "correction": "Étape 1 : $a = 1 > 0$, la parabole est tournée vers le haut. Étape 2 : Le polynôme est négatif entre les racines 2 et 4. Étape 3 : Comme 3 est entre 2 et 4, $f(3)$ est négatif.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Fonctions"
+    },
+    {
+      "id": "fonctions-09",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Intervalle de croissance",
+      "difficulte": 2,
+      "question": "La fonction $f(x) = -x^2 + 4x - 3$ admet un maximum en $x = 2$. Sur quel intervalle la fonction est-elle croissante ? (Donner sous la forme d'un intervalle, ex: ]a;b[ )",
+      "typeReponse": "texte",
+      "reponseAttendue": "]-inf;2[",
+      "unite": "",
+      "aide": [
+        "Le coefficient $a = -1$ est négatif. La parabole est tournée vers le bas.",
+        "Le sommet en $x = 2$ est un maximum.",
+        "La fonction est croissante avant le maximum, donc sur $]-\\infty; 2[$."
+      ],
+      "correction": "Étape 1 : $a = -1 < 0$, la parabole est tournée vers le bas. Étape 2 : Le sommet en $x = 2$ est un maximum. Étape 3 : La fonction est croissante avant le maximum, donc sur $]-\\infty; 2[$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Fonctions"
+    },
+    {
+      "id": "fonctions-10",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Coefficient de la forme factorisée",
+      "difficulte": 2,
+      "question": "Sachant que $f(x) = 2x^2 - 8x + 6$ a pour racines 1 et 3, on écrit la forme factorisée $f(x) = a(x-1)(x-3)$. Quel est le coefficient $a$ ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 2,
+      "unite": "",
+      "aide": [
+        "Développons $a(x-1)(x-3) = a(x^2 - 4x + 3) = ax^2 - 4ax + 3a$.",
+        "En comparant avec $2x^2 - 8x + 6$, on a $ax^2 = 2x^2$.",
+        "Donc $a = 2$."
+      ],
+      "correction": "Étape 1 : Développons $a(x-1)(x-3) = a(x^2 - 4x + 3) = ax^2 - 4ax + 3a$. Étape 2 : En comparant avec $2x^2 - 8x + 6$, on identifie $ax^2 = 2x^2$. Étape 3 : Donc $a = 2$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Fonctions"
+    },
+    {
+      "id": "fonctions-11",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Forme canonique",
+      "difficulte": 3,
+      "question": "On met $f(x) = x^2 - 6x + 5$ sous forme canonique $(x-\\alpha)^2 + \\beta$. Quelle est la valeur de $\\beta$ ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": -4,
+      "unite": "",
+      "aide": [
+        "La forme canonique est $(x-3)^2 - 4$.",
+        "Développons : $(x-3)^2 - 4 = x^2 - 6x + 9 - 4 = x^2 - 6x + 5$.",
+        "Donc $\\beta = -4$."
+      ],
+      "correction": "Étape 1 : La forme canonique est $(x-3)^2 - 4$. Étape 2 : Développons : $(x-3)^2 - 4 = x^2 - 6x + 9 - 4 = x^2 - 6x + 5$. Étape 3 : En comparant avec $f(x) = x^2 - 6x + 5$, on trouve $\\beta = -4$.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Fonctions"
+    },
+    {
+      "id": "fonctions-12",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Intersection avec l'axe des abscisses",
+      "difficulte": 2,
+      "question": "La courbe de $f(x) = x^2 - 5x + 6$ coupe l'axe des abscisses en deux points. Quelle est l'abscisse du plus petit point d'intersection ? (les racines sont 2 et 3)",
+      "typeReponse": "nombre",
+      "reponseAttendue": 2,
+      "unite": "",
+      "aide": [
+        "Résolvons $x^2 - 5x + 6 = 0$.",
+        "Cherchons deux nombres dont le produit est 6 et la somme est 5.",
+        "Ce sont 2 et 3. Le plus petit est 2."
+      ],
+      "correction": "Étape 1 : Résolvons $x^2 - 5x + 6 = 0$. Étape 2 : Les racines sont 2 et 3 car $2 \\times 3 = 6$ et $2 + 3 = 5$. Étape 3 : Le plus petit point d'intersection a pour abscisse 2.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Fonctions"
+    },
+    {
+      "id": "fonctions-13",
+      "notion": "Fonctions de la variable réelle",
+      "domaine": "Analyse",
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Ordonnée à l'origine",
+      "difficulte": 1,
+      "question": "La courbe de $f(x) = -2x^2 + 8x + 10$ coupe l'axe des ordonnées en un point. Quelle est l'ordonnée de ce point ?",
+      "typeReponse": "nombre",
+      "reponseAttendue": 10,
+      "unite": "",
+      "aide": [
+        "L'axe des ordonnées correspond à $x = 0$.",
+        "Calcule $f(0) = -2 \\times 0^2 + 8 \\times 0 + 10$.",
+        "$f(0) = 10$."
+      ],
+      "correction": "Étape 1 : L'axe des ordonnées correspond à $x = 0$. Étape 2 : $f(0) = -2 \\times 0^2 + 8 \\times 0 + 10 = 10$. Étape 3 : L'ordonnée à l'origine est 10.",
+      "estOfficiel": false,
+      "source": "Exercice créé pour l'épreuve anticipée ST2S 2026 – Fonctions"
     }
   ]
 }
