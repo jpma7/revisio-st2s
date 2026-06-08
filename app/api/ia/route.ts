@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
   }
 
   // ─── 1. OPENAI (ChatGPT) — priorité si clé valide ─────
-  const openaiUrl = process.env.OPENAI_API_URL;
+  const openaiUrl = process.env.OPENAI_API_URL || "https://api.openai.com/v1/chat/completions";
   const openaiKey = process.env.OPENAI_API_KEY;
   const openaiModel = process.env.OPENAI_API_MODEL || "gpt-4o";
 

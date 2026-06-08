@@ -8,9 +8,10 @@ const HASH = Buffer.from(PASSWORD).toString('base64');
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Ne pas protéger la page de login ni les assets statiques
+  // Ne pas protéger : login, API, assets statiques
   if (
     pathname === '/login' ||
+    pathname.startsWith('/api/') ||
     pathname.startsWith('/_next') ||
     pathname.startsWith('/static') ||
     pathname.match(/\.(jpg|jpeg|png|gif|svg|ico|css|js|woff|woff2)$/)
