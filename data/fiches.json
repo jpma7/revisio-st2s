@@ -1,0 +1,316 @@
+{
+  "fiches": [
+    {
+      "chapitre": "suites-numeriques",
+      "titre": "Suites numériques",
+      "sous_titre": "Modéliser une évolution dans le temps",
+      "points_cles": [
+        {
+          "titre": "Suite arithmétique",
+          "texte": "C'est une suite où on ajoute toujours le même nombre (la raison $r$) pour passer d'un terme au suivant. Exemple : nombre de patients qui augmente de 10 chaque mois.",
+          "formule": "$u_n = u_0 + n \\times r$",
+          "astuce": "Si tu vois 'augmente de X à chaque période', c'est arithmétique."
+        },
+        {
+          "titre": "Suite géométrique",
+          "texte": "C'est une suite où on multiplie toujours par le même nombre (la raison $q$). Exemple : une quantité de médicament qui diminue de 20% à chaque heure (on multiplie par 0,8).",
+          "formule": "$u_n = u_0 \\times q^n$",
+          "astuce": "Si tu vois 'augmente de X%' ou 'reste Y%', c'est géométrique."
+        },
+        {
+          "titre": "Somme des termes",
+          "texte": "Pour calculer le total sur plusieurs périodes.",
+          "formule": "Arithmétique : $S = (n+1) \\times \\frac{u_0 + u_n}{2}$ | Géométrique : $S = u_0 \\times \\frac{1 - q^{n+1}}{1 - q}$",
+          "astuce": "Pour l'arithmétique, c'est comme la moyenne des extrêmes multipliée par le nombre de termes."
+        },
+        {
+          "titre": "Évolutions successives",
+          "texte": "Quand il y a plusieurs augmentations ou baisses à la suite, on multiplie les taux multiplicateurs.",
+          "formule": "+15% puis +20% : $1,15 \\times 1,20 = 1,38$ (soit +38% au total)",
+          "astuce": "Ne JAMAIS additionner les pourcentages directement !"
+        }
+      ],
+      "methode": [
+        "Repère si la suite est arithmétique (+) ou géométrique ($\\times$).",
+        "Identifie $u_0$ (valeur de départ) et la raison ($r$ ou $q$).",
+        "Applique la formule adaptée selon ce qu'on te demande (terme, somme, évolution)."
+      ],
+      "exemple": "Un médicament reste à 70% dans le sang chaque heure. Au départ il y en a 200 mg. Combien reste-t-il après 3 heures ? C'est géométrique : $u_0 = 200$, $q = 0,7$. $u_3 = 200 \\times 0,7^3 = 200 \\times 0,343 = 68,6$ mg.",
+      "pieges": [
+        "Ne pas confondre $n$ (rang) et $u_n$ (valeur).",
+        "Pour une baisse de 20%, le multiplicateur est $0,80$ (pas $1,20$).",
+        "L'exposant $n$ dans $q^n$ est le nombre de périodes écoulées, pas le rang total."
+      ]
+    },
+    {
+      "chapitre": "fonctions-variable-reelle",
+      "titre": "Fonctions de la variable réelle",
+      "sous_titre": "Modéliser avec une courbe",
+      "points_cles": [
+        {
+          "titre": "Polynôme du second degré",
+          "texte": "C'est une fonction de la forme $f(x) = ax^2 + bx + c$. Sa courbe est une parabole.",
+          "formule": "Sommet : $x = -\\frac{b}{2a}$",
+          "astuce": "Si $a > 0$, la parabole sourit (∪). Si $a < 0$, elle fronce les sourcils (∩)."
+        },
+        {
+          "titre": "Signe du polynôme",
+          "texte": "Le polynôme est du signe de $a$ à l'extérieur des racines, et du signe opposé entre les racines.",
+          "formule": "Racines = solutions de $ax^2 + bx + c = 0$",
+          "astuce": "Dessine une parabole rapide : elle traverse l'axe en deux points, et change de signe entre eux."
+        },
+        {
+          "titre": "Forme canonique",
+          "texte": "Elle met en évidence le sommet $(\\alpha, \\beta)$.",
+          "formule": "$f(x) = a(x - \\alpha)^2 + \\beta$ avec $\\alpha = -\\frac{b}{2a}$ et $\\beta = f(\\alpha)$",
+          "astuce": "$\\beta$ est la valeur maximale (si $a < 0$) ou minimale (si $a > 0$)."
+        },
+        {
+          "titre": "Forme factorisée",
+          "texte": "Si tu connais les racines $r_1$ et $r_2$, tu peux écrire :",
+          "formule": "$f(x) = a(x - r_1)(x - r_2)$",
+          "astuce": "Le coefficient $a$ est le même que dans la forme développée."
+        }
+      ],
+      "methode": [
+        "Calcule le discriminant ou trouve les racines si elles sont données.",
+        "Détermine le sommet avec $x = -b/2a$.",
+        "Dresse le tableau de signes ou de variations selon la question."
+      ],
+      "exemple": "$f(x) = -2x^2 + 8x + 10$. Le sommet est en $x = -8/(2 \\times (-2)) = 2$. $f(2) = -8 + 16 + 10 = 18$. C'est un maximum car $a = -2 < 0$.",
+      "pieges": [
+        "Ne pas oublier que le signe de $a$ détermine si le sommet est un max ou un min.",
+        "Confondre abscisse ($x$) et ordonnée ($f(x)$) du sommet.",
+        "Dans la factorisation, ne pas oublier le coefficient $a$ devant la parenthèse."
+      ]
+    },
+    {
+      "chapitre": "derivation",
+      "titre": "Dérivation",
+      "sous_titre": "Trouver les variations d'une fonction",
+      "points_cles": [
+        {
+          "titre": "Dérivée d'un polynôme",
+          "texte": "La dérivée mesure la pente de la tangente à la courbe.",
+          "formule": "$(x^2)' = 2x$ | $(kx)' = k$ | $(k)' = 0$ | $(e^x)' = e^x$",
+          "astuce": "La dérivée d'une somme est la somme des dérivées."
+        },
+        {
+          "titre": "Signe de la dérivée",
+          "texte": "Le signe de $f'(x)$ donne les variations de $f$.",
+          "formule": "$f'(x) > 0 \\Rightarrow f$ croissante | $f'(x) < 0 \\Rightarrow f$ décroissante",
+          "astuce": "Quand la dérivée s'annule en changeant de signe, c'est un extremum."
+        },
+        {
+          "titre": "Tangente en un point",
+          "texte": "L'équation de la tangente à la courbe au point d'abscisse $a$.",
+          "formule": "$y = f'(a)(x - a) + f(a)$",
+          "astuce": "$f'(a)$ est le coefficient directeur (la pente) de la tangente."
+        }
+      ],
+      "methode": [
+        "Calcule la dérivée $f'(x)$.",
+        "Étudie le signe de $f'(x)$ (racine de $f'(x) = 0$).",
+        "Déduis les variations de $f$ et identifie les max/min."
+      ],
+      "exemple": "$f(x) = -0,5x^2 + 4x - 3$. $f'(x) = -x + 4$. $f'(x) = 0$ quand $x = 4$. Quand $x < 4$, $f' > 0$ donc $f$ croît. Quand $x > 4$, $f' < 0$ donc $f$ décroît. Le sommet en $x = 4$ est bien un maximum.",
+      "pieges": [
+        "La dérivée s'annule ne veut pas toujours dire extremum (il faut un changement de signe).",
+        "Ne pas confondre $f(a)$ (ordonnée du point) et $f'(a)$ (pente de la tangente).",
+        "Oublier que la dérivée de $ax^2$ est $2ax$ (le 2 descend devant le a)."
+      ]
+    },
+    {
+      "chapitre": "statistique",
+      "titre": "Statistique",
+      "sous_titre": "Analyser une série de données",
+      "points_cles": [
+        {
+          "titre": "Moyenne",
+          "texte": "La valeur moyenne de la série.",
+          "formule": "$\\bar{x} = \\frac{\\sum x_i}{n}$ ou $\\frac{\\sum n_i x_i}{\\sum n_i}$ (pondérée)",
+          "astuce": "La moyenne pondérée, c'est comme si tu calculais ton bulletin avec des coeff."
+        },
+        {
+          "titre": "Médiane et quartiles",
+          "texte": "La médiane partage la série en deux. Q1 = 25% inférieurs, Q3 = 25% supérieurs.",
+          "formule": "Écart interquartile = Q3 - Q1",
+          "astuce": "L'écart interquartile contient 50% des valeurs centrales."
+        },
+        {
+          "titre": "Boîte à moustaches",
+          "texte": "Représentation graphique : Min --[Q1 | Méd | Q3]-- Max.",
+          "formule": "La boîte contient 50% des données (de Q1 à Q3).",
+          "astuce": "Si la moustache de droite est longue, il y a des valeurs très grandes."
+        }
+      ],
+      "methode": [
+        "Ordonne les données dans l'ordre croissant.",
+        "Calcule la médiane (milieu), puis Q1 (médiane de la moitié gauche) et Q3 (médiane de la moitié droite).",
+        "Calcule l'écart interquartile et compare les séries si besoin."
+      ],
+      "exemple": "Âges de 7 patients : 23, 34, 45, 52, 61, 68, 75. Médiane = 52 (le 4ème). Q1 = médiane de [23,34,45,52] = 39,5. Q3 = médiane de [52,61,68,75] = 64,5. Écart interquartile = 64,5 - 39,5 = 25 ans.",
+      "pieges": [
+        "La médiane n'est pas la moyenne !",
+        "Avec un nombre pair de valeurs, la médiane est la moyenne des deux du milieu.",
+        "Ne pas confondre Q1 (25%) et Q3 (75%) — Q3 est plus grand que Q1."
+      ]
+    },
+    {
+      "chapitre": "probabilites-conditionnelles",
+      "titre": "Probabilités conditionnelles",
+      "sous_titre": "Calculer quand on a une information partielle",
+      "points_cles": [
+        {
+          "titre": "Probabilité conditionnelle",
+          "texte": "La probabilité de A sachant que B est réalisé.",
+          "formule": "$P_B(A) = \\frac{P(A \\cap B)}{P(B)}$",
+          "astuce": "Parmi ceux qui sont dans B, quelle proportion est aussi dans A ?"
+        },
+        {
+          "titre": "Formule des probabilités totales",
+          "texte": "Quand on partitionne la population en deux groupes (par exemple vaccinés / non vaccinés).",
+          "formule": "$P(A) = P(B) \\times P_B(A) + P(\\bar{B}) \\times P_{\\bar{B}}(A)$",
+          "astuce": "C'est comme une moyenne pondérée des deux groupes."
+        },
+        {
+          "titre": "Arbre pondéré",
+          "texte": "Sur les branches : les probabilités conditionnelles. Pour un chemin complet : on multiplie les probabilités.",
+          "formule": "Probabilité d'un chemin = produit des probabilités sur les branches",
+          "astuce": "Les probas sur les branches issues d'un même nœud somment toujours à 1."
+        },
+        {
+          "titre": "Indépendance",
+          "texte": "Deux événements sont indépendants si le fait que l'un arrive ne change pas la probabilité de l'autre.",
+          "formule": "$A$ et $B$ indépendants $\\Leftrightarrow P(A \\cap B) = P(A) \\times P(B)$",
+          "astuce": "Si l'énoncé dit 'au hasard' sans lien entre les deux, ils sont souvent indépendants."
+        }
+      ],
+      "methode": [
+        "Identifie les événements et les données données (souvent sous forme de pourcentages 'parmi...').",
+        "Construis un arbre pondéré ou un tableau de contingence.",
+        "Applique la formule des probabilités totales si on cherche une proba globale."
+      ],
+      "exemple": "60% vaccinés, 10% de malades parmi les vaccinés, 40% parmi les non vaccinés. Probabilité d'être malade : $P(M) = 0,60 \\times 0,10 + 0,40 \\times 0,40 = 0,06 + 0,16 = 0,22$ soit 22%.",
+      "pieges": [
+        "Ne pas confondre $P_B(A)$ et $P_A(B)$ — l'information qu'on te donne est après le 'sachant que'.",
+        "Les pourcentages 'parmi les...' sont des probabilités conditionnelles, pas des probabilités totales.",
+        "Pour l'indépendance, vérifier avec la formule — ne pas le deviner."
+      ]
+    },
+    {
+      "chapitre": "bernoulli-variables-aleatoires",
+      "titre": "Épreuves de Bernoulli et variables aléatoires",
+      "sous_titre": "Modéliser le hasard avec des répétitions",
+      "points_cles": [
+        {
+          "titre": "Loi de Bernoulli",
+          "texte": "Une épreuve à deux issues (succès/échec) avec proba $p$ de succès.",
+          "formule": "$P(X=1) = p$ | $P(X=0) = 1-p$ | $E(X) = p$",
+          "astuce": "L'espérance, c'est la proportion moyenne de succès sur un grand nombre d'essais."
+        },
+        {
+          "titre": "Schéma de Bernoulli",
+          "texte": "On répète $n$ fois une épreuve de Bernoulli identique et indépendante.",
+          "formule": "Probabilité d'un chemin avec $k$ succès : $p^k \\times (1-p)^{n-k}$",
+          "astuce": "Compte les chemins possibles avec $k$ succès : c'est le coefficient binomial."
+        },
+        {
+          "titre": "Espérance d'une variable aléatoire",
+          "texte": "Valeur moyenne qu'on peut espérer sur un grand nombre d'expériences.",
+          "formule": "$E(X) = \\sum x_i \\times P(X=x_i)$",
+          "astuce": "C'est comme une moyenne pondérée où les valeurs sont les $x_i$ et les poids sont les proba."
+        }
+      ],
+      "methode": [
+        "Vérifie que c'est bien une répétition d'épreuves identiques et indépendantes.",
+        "Identifie $n$ (nombre de répétitions) et $p$ (proba de succès).",
+        "Calcule la proba du chemin demandé et multiplie par le nombre de chemins possibles."
+      ],
+      "exemple": "Un vaccin protège à 80%. On vaccine 3 personnes. Probabilité qu'exactement 2 soient protégées : SSP, SPS, PSS (3 chemins). Chaque chemin = $0,8^2 \\times 0,2 = 0,128$. Total = $3 \\times 0,128 = 0,384$.",
+      "pieges": [
+        "Ne pas oublier de compter tous les chemins possibles.",
+        "Vérifier que les épreuves sont bien indépendantes (la question le dit souvent explicitement).",
+        "Dans l'espérance, multiplier chaque valeur par SA probabilité, pas par $1/n$."
+      ]
+    },
+    {
+      "chapitre": "automatismes",
+      "titre": "Automatismes",
+      "sous_titre": "Les calculs qu'il faut faire sans réfléchir",
+      "points_cles": [
+        {
+          "titre": "Pourcentages",
+          "texte": "Calculer $t\\%$ d'un nombre, c'est multiplier par $t/100$.",
+          "formule": "15% de 120 = $120 \\times 0,15 = 18$",
+          "astuce": "10% = diviser par 10. 5% = la moitié de 10%. 1% = diviser par 100."
+        },
+        {
+          "titre": "Taux multiplicateur",
+          "texte": "Augmenter de $t\\%$, c'est multiplier par $1 + \\frac{t}{100}$. Diminuer, c'est $1 - \\frac{t}{100}$.",
+          "formule": "+25% $\\rightarrow \\times 1,25$ | -30% $\\rightarrow \\times 0,70$",
+          "astuce": "Un multiplicateur > 1 = augmentation. < 1 = diminution."
+        },
+        {
+          "titre": "Évolutions successives",
+          "texte": "Multiplie les multiplicateurs. Ne additionne JAMAIS les pourcentages.",
+          "formule": "+20% puis +10% : $1,20 \\times 1,10 = 1,32$ (soit +32%)",
+          "astuce": "Le taux global est TOUJOURS un peu plus grand que la somme des taux (sauf pour de petits %)."
+        },
+        {
+          "titre": "Lecture graphique",
+          "texte": "Image = valeur sur l'axe vertical. Antécédent = valeur sur l'axe horizontal.",
+          "formule": "Point $(a ; b)$ signifie $f(a) = b$",
+          "astuce": "Pour lire une image, monte verticalement jusqu'à la courbe, puis regarde à gauche."
+        }
+      ],
+      "methode": [
+        "Identifie le type de calcul demandé (pourcentage, multiplicateur, graphique...).",
+        "Applique la formule directement sans chercher à compliquer.",
+        "Vérifie rapidement : le résultat a-t-il du sens (plus grand pour une augmentation, etc.) ?"
+      ],
+      "exemple": "Un salaire de 2000€ augmente de 15%. Nouveau salaire = $2000 \\times 1,15 = 2300$€. Vérif : c'est plus que 2000, et un peu plus que $2000 + 200 = 2200$ (10%), donc c'est cohérent.",
+      "pieges": [
+        "Additionner des pourcentages à la place de multiplier les multiplicateurs.",
+        "Oublier de convertir le pourcentage en décimal ($15\\% = 0,15$, pas 15).",
+        "Dans un graphique, inverser abscisse et ordonnée."
+      ]
+    },
+    {
+      "chapitre": "pourcentages-evolutions",
+      "titre": "Pourcentages et évolutions",
+      "sous_titre": "Calculer des variations en pourcentage",
+      "points_cles": [
+        {
+          "titre": "Pourcentage d'augmentation",
+          "texte": "Quand on connaît l'ancien et le nouveau prix.",
+          "formule": "$\\frac{\\text{nouveau} - \\text{ancien}}{\\text{ancien}} \\times 100$",
+          "astuce": "On divise toujours par l'ancienne valeur (le point de départ)."
+        },
+        {
+          "titre": "Valeur avant une baisse",
+          "texte": "Quand on connaît le prix après une baisse de $t\\%$.",
+          "formule": "Ancien = $\\frac{\\text{nouveau}}{1 - \\frac{t}{100}}$",
+          "astuce": "Si la baisse est de 30%, le nouveau prix représente 70% de l'ancien."
+        },
+        {
+          "titre": "Pourcentage de pourcentage",
+          "texte": "Quand un sous-groupe est lui-même un pourcentage du total.",
+          "formule": "80% de vaccinés dont 90% protégés = $0,80 \\times 0,90 = 0,72 = 72\\%$",
+          "astuce": "C'est un 'parmi les... parmi les...' — on multiplie les deux pourcentages."
+        }
+      ],
+      "methode": [
+        "Identifie quelle valeur est le 'ancien' (référence) et quelle est le 'nouveau'.",
+        "Choisis la bonne formule selon la question (taux d'évolution, valeur initiale, etc.).",
+        "Calcule et vérifie que le sens est bon (augmentation = résultat > ancien)."
+      ],
+      "exemple": "Après une baisse de 30%, un traitement coûte 14€. Prix avant = $14 / 0,70 = 20$€. Vérif : 20€ - 30% = 20 - 6 = 14€. C'est bon.",
+      "pieges": [
+        "Diviser par le nouveau au lieu de l'ancien pour calculer un pourcentage.",
+        "Oublier que 'diminuer de 50%' puis 'augmenter de 50%' ne revient pas au point de départ.",
+        "Confondre 'augmenter de 20%' et 'représenter 20% de'."
+      ]
+    }
+  ]
+}

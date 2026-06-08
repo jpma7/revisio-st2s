@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import exercisesData from "@/data/exercises/programme-st2s.json";
 import programmeData from "@/data/programme.json";
+import fichesData from "@/data/fiches.json";
 import AnswerPanel from "@/components/AnswerPanel";
 import MathText from "@/components/MathText";
 
@@ -55,30 +56,20 @@ function getWeakNotions(progress: Progress): string[] {
     .map(([n]) => n);
 }
 
-function getChaptersForNotion(notion: string) {
-  const chapters: {
-    id: string;
-    titre: string;
-    notions_cles: string[];
-    competences: string[];
-  }[] = [];
-  programmeData.programme.domaines.forEach((d) => {
-    d.chapitres.forEach((c) => {
-      const chNotion = c.titre
-        .replace("Chapitre 1 – ", "")
-        .replace("Chapitre 2 – ", "")
-        .replace("Chapitre 3 – ", "");
-      if (chNotion === notion || c.titre.includes(notion)) {
-        chapters.push({
-          id: c.id,
-          titre: c.titre,
-          notions_cles: c.notions_cles,
-          competences: c.competences,
-        });
-      }
-    });
-  });
-  return chapters;
+function getFicheForNotion(notion: string) {
+  const chIdMap: Record<string, string> = {
+    "Suites numériques": "suites-numeriques",
+    "Fonctions de la variable réelle": "fonctions-variable-reelle",
+    Dérivation: "derivation",
+    Statistique: "statistique",
+    "Probabilités conditionnelles": "probabilites-conditionnelles",
+    "Épreuves de Bernoulli et variables aléatoires": "bernoulli-variables-aleatoires",
+    Automatismes: "automatismes",
+    "Pourcentages et évolutions": "pourcentages-evolutions",
+  };
+  const chId = chIdMap[notion];
+  if (!chId) return null;
+  return fichesData.fiches.find((f) => f.chapitre === chId) ?? null;
 }
 
 export default function RevisionExpressClient() {
@@ -199,9 +190,9 @@ export default function RevisionExpressClient() {
             📌 Tes priorités à reviser
           </h2>
           {ficheNotions.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-6">
               {ficheNotions.map((notion) => {
-                const chaps = getChaptersForNotion(notion);
+                const fiche = getFicheForNotion(notion);
                 const stat = (() => {
                   const pool = allExercises.filter(
                     (e) => e.notion === notion
@@ -212,36 +203,86 @@ export default function RevisionExpressClient() {
                 return (
                   <div
                     key={notion}
-                    className="rounded-2xl bg-card border border-border p-5"
+                    className="rounded-2xl bg-card border border-border p-6"
                   >
-                    <div className="flex items-center justify-between mb-3">
-                      <p className="font-bold text-slate">{notion}</p>
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <p className="font-bold text-slate text-lg">{notion}</p>
+                        {fiche && (
+                          <p className="text-xs text-slate-light italic">{fiche.sous_titre}</p>
+                        )}
+                      </div>
                       <span className="text-xs font-bold text-terracotta">
                         {stat.done}/{stat.total} réussis
                       </span>
                     </div>
-                    {chaps.map((ch) => (
-                      <div key={ch.id} className="mb-3">
-                        <p className="text-xs font-bold uppercase text-slate-light mb-1.5">
-                          Formules clés à mémoriser
-                        </p>
-                        <ul className="space-y-1.5">
-                          {ch.notions_cles.slice(0, 4).map((n, i) => (
-                            <li
-                              key={i}
-                              className="text-sm text-slate leading-relaxed"
-                            >
-                              • {n}
-                            </li>
-                          ))}
-                        </ul>
+
+                    {fiche ? (
+                      <div className="flex flex-col gap-5">
+                        {/* Points clés */}
+                        <div className="rounded-xl bg-cream/60 border border-border p-4">
+                          <p className="text-xs font-bold uppercase tracking-wider text-slate-light mb-3">
+                            🗝️ Points clés
+                          </p>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {fiche.points_cles.map((pt, i) => (
+                              <div key={i} className="bg-card rounded-lg p-3 border border-border/60">
+                                <p className="font-bold text-sm text-slate mb-1">{pt.titre}</p>
+                                <MathText className="text-sm text-slate-light leading-relaxed">{pt.texte}</MathText>
+                                <div className="mt-2 rounded bg-sage/10 px-2 py-1 border border-sage/20">
+                                  <MathText className="text-sm text-sage-dark font-mono">{pt.formule}</MathText>
+                                </div>
+                                <p className="mt-1.5 text-xs text-warm-yellow-dark italic">💡 {pt.astuce}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Méthode */}
+                        <div className="rounded-xl bg-terracotta/5 border border-terracotta/20 p-4">
+                          <p className="text-xs font-bold uppercase tracking-wider text-terracotta mb-3">
+                            🧭 Méthode en {fiche.methode.length} étapes
+                          </p>
+                          <ol className="list-decimal list-inside space-y-2 text-sm text-slate leading-relaxed">
+                            {fiche.methode.map((step, i) => (
+                              <li key={i}><MathText>{step}</MathText></li>
+                            ))}
+                          </ol>
+                        </div>
+
+                        {/* Exemple */}
+                        <div className="rounded-xl bg-warm-yellow/10 border border-warm-yellow/30 p-4">
+                          <p className="text-xs font-bold uppercase tracking-wider text-warm-yellow-dark mb-2">
+                            🩺 Exemple ST2S
+                          </p>
+                          <MathText className="text-sm text-slate leading-relaxed">{fiche.exemple}</MathText>
+                        </div>
+
+                        {/* Pièges */}
+                        <div className="rounded-xl bg-rose-50 border border-rose-200 p-4">
+                          <p className="text-xs font-bold uppercase tracking-wider text-rose-700 mb-2">
+                            ⚠️ Pièges à éviter
+                          </p>
+                          <ul className="space-y-1.5">
+                            {fiche.pieges.map((p, i) => (
+                              <li key={i} className="text-sm text-rose-800 leading-relaxed">
+                                • <MathText>{p}</MathText>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
-                    ))}
+                    ) : (
+                      <p className="text-sm text-slate-light">
+                        Fiche de révision en cours de rédaction pour cette notion.
+                      </p>
+                    )}
+
                     <Link
                       href={`/reviser?notion=${encodeURIComponent(notion)}`}
-                      className="inline-block mt-2 rounded-xl bg-terracotta px-4 py-2 text-xs font-bold text-white hover:bg-terracotta-dark transition"
+                      className="inline-block mt-5 rounded-xl bg-terracotta px-5 py-2.5 text-sm font-bold text-white hover:bg-terracotta-dark transition shadow-sm"
                     >
-                      S’entraîner sur cette notion →
+                      S’entraîner sur {notion} →
                     </Link>
                   </div>
                 );
