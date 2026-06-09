@@ -187,11 +187,23 @@ export default function RevisionExpressClient() {
         {/* Fiches de révision ciblées */}
         <div className="mb-8 rounded-3xl border-2 border-terracotta/20 bg-terracotta/5 p-6">
           <h2 className="font-display text-xl text-terracotta mb-4">
-            📌 Tes priorités à reviser
+            {ficheNotions.length > 0 ? "📌 Tes priorités à reviser" : "📚 Toutes les fiches de révision"}
           </h2>
-          {ficheNotions.length > 0 ? (
+          {(() => {
+            const allNotionsWithFiche = [
+              "Suites numériques",
+              "Fonctions de la variable réelle",
+              "Dérivation",
+              "Statistique",
+              "Probabilités conditionnelles",
+              "Épreuves de Bernoulli et variables aléatoires",
+              "Automatismes",
+              "Pourcentages et évolutions",
+            ];
+            const displayNotions = ficheNotions.length > 0 ? ficheNotions : allNotionsWithFiche;
+            return (
             <div className="flex flex-col gap-6">
-              {ficheNotions.map((notion) => {
+              {displayNotions.map((notion) => {
                 const fiche = getFicheForNotion(notion);
                 const stat = (() => {
                   const pool = allExercises.filter(
@@ -288,12 +300,8 @@ export default function RevisionExpressClient() {
                 );
               })}
             </div>
-          ) : (
-            <p className="text-slate-light">
-              Fais quelques exercices pour qu’on puisse détecter tes faiblesses
-              et construire tes fiches.
-            </p>
-          )}
+            );
+          })()}
         </div>
 
         {/* Lancer session */}
