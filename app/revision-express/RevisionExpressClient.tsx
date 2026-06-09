@@ -66,6 +66,7 @@ function getFicheForNotion(notion: string) {
     "Épreuves de Bernoulli et variables aléatoires": "bernoulli-variables-aleatoires",
     Automatismes: "automatismes",
     "Pourcentages et évolutions": "pourcentages-evolutions",
+    "Fonctions du second degré": "fonctions-second-degre",
   };
   const chId = chIdMap[notion];
   if (!chId) return null;
@@ -193,6 +194,7 @@ export default function RevisionExpressClient() {
             const allNotionsWithFiche = [
               "Suites numériques",
               "Fonctions de la variable réelle",
+              "Fonctions du second degré",
               "Dérivation",
               "Statistique",
               "Probabilités conditionnelles",

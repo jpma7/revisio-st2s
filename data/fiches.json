@@ -311,6 +311,63 @@
         "Oublier que 'diminuer de 50%' puis 'augmenter de 50%' ne revient pas au point de départ.",
         "Confondre 'augmenter de 20%' et 'représenter 20% de'."
       ]
+    },
+    {
+      "chapitre": "fonctions-second-degre",
+      "titre": "Fonctions du second degré",
+      "sous_titre": "Trouver les racines et factoriser",
+      "points_cles": [
+        {
+          "titre": "Forme développée",
+          "texte": "Une fonction polynôme du second degré s'écrit $f(x) = ax^2 + bx + c$. C'est un trinôme avec trois termes : un en $x^2$, un en $x$, et une constante.",
+          "formule": "$f(x) = ax^2 + bx + c$",
+          "astuce": "C'est toujours un trinôme — trois termes avec $x^2$, $x$ et un nombre."
+        },
+        {
+          "titre": "Le discriminant $\\Delta$",
+          "texte": "Pour trouver les racines, on calcule d'abord $\\Delta = b^2 - 4ac$. C'est le nombre qui dit combien de racines il y a.",
+          "formule": "$\\Delta = b^2 - 4ac$",
+          "astuce": "Attention aux signes ! Si $b = -5$, alors $b^2 = (-5)^2 = 25$ (toujours positif)."
+        },
+        {
+          "titre": "Deux racines distinctes ($\\Delta > 0$)",
+          "texte": "Quand $\\Delta$ est strictement positif, il y a deux racines différentes.",
+          "formule": "$x_1 = \\frac{-b - \\sqrt{\\Delta}}{2a}$ et $x_2 = \\frac{-b + \\sqrt{\\Delta}}{2a}$",
+          "astuce": "La formule avec $-$ donne la plus petite racine, celle avec $+$ la plus grande."
+        },
+        {
+          "titre": "Une racine double ($\\Delta = 0$)",
+          "texte": "Quand $\\Delta = 0$, les deux racines se confondent en une seule.",
+          "formule": "$x_0 = \\frac{-b}{2a}$",
+          "astuce": "Factorisation : $f(x) = a(x - x_0)^2$"
+        },
+        {
+          "titre": "Pas de racine réelle ($\\Delta < 0$)",
+          "texte": "Quand $\\Delta$ est négatif, le polynôme ne s'annule jamais. Il reste toujours du signe de $a$.",
+          "formule": "Pas de factorisation réelle possible",
+          "astuce": "Le graphique ne coupe pas l'axe des abscisses."
+        },
+        {
+          "titre": "Factoriser avec les racines",
+          "texte": "Une fois les racines trouvées, on remplace dans la forme factorisée.",
+          "formule": "$f(x) = a(x - x_1)(x - x_2)$",
+          "astuce": "Vérifie en développant : $a(x - x_1)(x - x_2)$ doit redonner $ax^2 + bx + c$."
+        }
+      ],
+      "methode": [
+        "Identifie $a$, $b$ et $c$ dans $f(x) = ax^2 + bx + c$.",
+        "Calcule le discriminant $\\Delta = b^2 - 4ac$.",
+        "Regarde le signe de $\\Delta$ : $> 0$ (2 racines), $= 0$ (1 racine), $< 0$ (pas de racine).",
+        "Si $\\Delta \\geq 0$, calcule les racines avec la formule adaptée.",
+        "Écris la forme factorisée : $f(x) = a(x - x_1)(x - x_2)$ (ou $(x - x_0)^2$ si $\\Delta = 0$)."
+      ],
+      "exemple": "Un médicament est éliminé selon $f(t) = -2t^2 + 8t + 10$ ($t$ en heures). Quand est-il totalement éliminé ? $a = -2$, $b = 8$, $c = 10$. $\\Delta = 8^2 - 4 \\times (-2) \\times 10 = 64 + 80 = 144$. $\\sqrt{144} = 12$. $t_1 = \\frac{-8 - 12}{-4} = 5$ et $t_2 = \\frac{-8 + 12}{-4} = -1$. On garde seulement $t = 5$h (le temps négatif n'a pas de sens). Factorisation : $f(t) = -2(t - 5)(t + 1)$.",
+      "pieges": [
+        "Oublier le signe de $a$ dans $2a$ au dénominateur.",
+        "Se tromper de signe pour $b$ dans $-b$ (si $b = -3$, alors $-b = +3$).",
+        "Penser que $\\Delta < 0$ signifie 'erreur de calcul' — non, c'est un résultat valide.",
+        "Oublier de remettre le coefficient $a$ devant la factorisation : c'est $a(x - x_1)(x - x_2)$, pas juste $(x - x_1)(x - x_2)$."
+      ]
     }
   ]
 }
