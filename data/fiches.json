@@ -318,55 +318,60 @@
       "sous_titre": "Trouver les racines et factoriser",
       "points_cles": [
         {
-          "titre": "Forme développée",
-          "texte": "Une fonction polynôme du second degré s'écrit $f(x) = ax^2 + bx + c$. C'est un trinôme avec trois termes : un en $x^2$, un en $x$, et une constante.",
-          "formule": "$f(x) = ax^2 + bx + c$",
-          "astuce": "C'est toujours un trinôme — trois termes avec $x^2$, $x$ et un nombre."
+          "titre": "Vocabulaire essentiel",
+          "texte": "Une racine de $f$ est un nombre $x$ qui annule la fonction, c'est-à-dire tel que $f(x) = 0$. Trouver les racines, c'est résoudre l'équation $f(x) = 0$.",
+          "formule": "$f(x) = ax^2 + bx + c$ (avec $a \\neq 0$)",
+          "astuce": "C'est un trinôme : un terme en $x^2$, un en $x$ et une constante $c$."
         },
         {
-          "titre": "Le discriminant $\\Delta$",
-          "texte": "Pour trouver les racines, on calcule d'abord $\\Delta = b^2 - 4ac$. C'est le nombre qui dit combien de racines il y a.",
-          "formule": "$\\Delta = b^2 - 4ac$",
-          "astuce": "Attention aux signes ! Si $b = -5$, alors $b^2 = (-5)^2 = 25$ (toujours positif)."
+          "titre": "Méthode 1 : Vérifier qu'un nombre est racine",
+          "texte": "On remplace $x$ par la valeur proposée et on vérifie que le résultat vaut 0.",
+          "formule": "Calculer $f(k)$ et montrer que $f(k) = 0$",
+          "astuce": "Attention : $(-1)^2 = +1$ et pas $-1$. On élève au carré AVANT de multiplier par $a$."
         },
         {
-          "titre": "Deux racines distinctes ($\\Delta > 0$)",
-          "texte": "Quand $\\Delta$ est strictement positif, il y a deux racines différentes.",
-          "formule": "$x_1 = \\frac{-b - \\sqrt{\\Delta}}{2a}$ et $x_2 = \\frac{-b + \\sqrt{\\Delta}}{2a}$",
-          "astuce": "La formule avec $-$ donne la plus petite racine, celle avec $+$ la plus grande."
+          "titre": "Méthode 2 : Le discriminant $\\Delta$",
+          "texte": "Quand la fonction n'est pas factorisée et qu'on ne connaît aucune racine, on calcule $\\Delta = b^2 - 4ac$. Il y a trois cas.",
+          "formule": "$\\Delta > 0$ : $x_1 = \\frac{-b - \\sqrt{\\Delta}}{2a}$ et $x_2 = \\frac{-b + \\sqrt{\\Delta}}{2a}$ | $\\Delta = 0$ : $x_0 = \\frac{-b}{2a}$ | $\\Delta < 0$ : aucune racine réelle",
+          "astuce": "Bien mettre les parenthèses autour des nombres négatifs : $-4 \\times (-2) \\times 8 = +64$."
         },
         {
-          "titre": "Une racine double ($\\Delta = 0$)",
-          "texte": "Quand $\\Delta = 0$, les deux racines se confondent en une seule.",
-          "formule": "$x_0 = \\frac{-b}{2a}$",
-          "astuce": "Factorisation : $f(x) = a(x - x_0)^2$"
+          "titre": "Méthode 3 : Produit des racines",
+          "texte": "Quand on connaît déjà une racine, on peut trouver la deuxième sans recalculer $\\Delta$.",
+          "formule": "$x_1 \\times x_2 = \\frac{c}{a}$",
+          "astuce": "Le mot 'déduire' dans l'énoncé est un indice : utilise cette propriété !"
         },
         {
-          "titre": "Pas de racine réelle ($\\Delta < 0$)",
-          "texte": "Quand $\\Delta$ est négatif, le polynôme ne s'annule jamais. Il reste toujours du signe de $a$.",
-          "formule": "Pas de factorisation réelle possible",
-          "astuce": "Le graphique ne coupe pas l'axe des abscisses."
-        },
-        {
-          "titre": "Factoriser avec les racines",
-          "texte": "Une fois les racines trouvées, on remplace dans la forme factorisée.",
+          "titre": "La forme factorisée",
+          "texte": "Quand on a trouvé les racines, on remplace dans la forme factorisée.",
           "formule": "$f(x) = a(x - x_1)(x - x_2)$",
-          "astuce": "Vérifie en développant : $a(x - x_1)(x - x_2)$ doit redonner $ax^2 + bx + c$."
+          "astuce": "$x - (-1)$ devient $x + 1$ (moins par moins donne plus)."
+        },
+        {
+          "titre": "Quelle méthode choisir ?",
+          "texte": "Stratégie selon la situation.",
+          "formule": "Vérifier → $f(k)$ | Aucune racine connue → $\\Delta$ | Une racine connue → $x_1 \\times x_2 = c/a$ | Factoriser → $a(x-x_1)(x-x_2)$",
+          "astuce": "Toujours vérifier en développant pour retrouver la forme de départ."
         }
       ],
       "methode": [
-        "Identifie $a$, $b$ et $c$ dans $f(x) = ax^2 + bx + c$.",
-        "Calcule le discriminant $\\Delta = b^2 - 4ac$.",
-        "Regarde le signe de $\\Delta$ : $> 0$ (2 racines), $= 0$ (1 racine), $< 0$ (pas de racine).",
-        "Si $\\Delta \\geq 0$, calcule les racines avec la formule adaptée.",
-        "Écris la forme factorisée : $f(x) = a(x - x_1)(x - x_2)$ (ou $(x - x_0)^2$ si $\\Delta = 0$)."
+        "Identifier $a$, $b$ et $c$ dans $f(x) = ax^2 + bx + c$.",
+        "Si l'énoncé demande de vérifier : calcule $f(k)$ et montre que $f(k) = 0$.",
+        "Sinon calcule $\\Delta = b^2 - 4ac$.",
+        "Si $\\Delta > 0$ : deux racines avec $x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}$.",
+        "Si $\\Delta = 0$ : une racine double $x_0 = \\frac{-b}{2a}$.",
+        "Si $\\Delta < 0$ : pas de racine réelle.",
+        "Si une racine est déjà connue : utilise $x_1 \\times x_2 = \\frac{c}{a}$ pour trouver l'autre.",
+        "Écris la forme factorisée $f(x) = a(x - x_1)(x - x_2)$ en gardant le $a$ devant."
       ],
-      "exemple": "Un médicament est éliminé selon $f(t) = -2t^2 + 8t + 10$ ($t$ en heures). Quand est-il totalement éliminé ? $a = -2$, $b = 8$, $c = 10$. $\\Delta = 8^2 - 4 \\times (-2) \\times 10 = 64 + 80 = 144$. $\\sqrt{144} = 12$. $t_1 = \\frac{-8 - 12}{-4} = 5$ et $t_2 = \\frac{-8 + 12}{-4} = -1$. On garde seulement $t = 5$h (le temps négatif n'a pas de sens). Factorisation : $f(t) = -2(t - 5)(t + 1)$.",
+      "exemple": "Soit $f(x) = -2x^2 + 6x + 8$ (donc $a = -2$, $b = 6$, $c = 8$). **Vérifier que $-1$ est racine** : $f(-1) = -2 \\times (-1)^2 + 6 \\times (-1) + 8 = -2 - 6 + 8 = 0$ ✅. **Avec $\\Delta$** : $\\Delta = 6^2 - 4 \\times (-2) \\times 8 = 36 + 64 = 100$. $\\sqrt{100} = 10$. $x_1 = \\frac{-6 - 10}{2 \\times (-2)} = \\frac{-16}{-4} = 4$ et $x_2 = \\frac{-6 + 10}{2 \\times (-2)} = \\frac{4}{-4} = -1$. **Avec le produit** : on sait $x_1 = -1$, donc $-1 \\times x_2 = \\frac{8}{-2} = -4$, donc $x_2 = 4$. **Factorisation** : $f(x) = -2(x + 1)(x - 4)$. Vérif : $-2(x^2 - 4x + x - 4) = -2(x^2 - 3x - 4) = -2x^2 + 6x + 8$ ✅.",
       "pieges": [
-        "Oublier le signe de $a$ dans $2a$ au dénominateur.",
-        "Se tromper de signe pour $b$ dans $-b$ (si $b = -3$, alors $-b = +3$).",
-        "Penser que $\\Delta < 0$ signifie 'erreur de calcul' — non, c'est un résultat valide.",
-        "Oublier de remettre le coefficient $a$ devant la factorisation : c'est $a(x - x_1)(x - x_2)$, pas juste $(x - x_1)(x - x_2)$."
+        "$(-1)^2 = +1$ et pas $-1$. On élève au carré AVANT de multiplier par $a$.",
+        "Bien mettre les parenthèses autour des nombres négatifs : $-4 \\times (-2) \\times 8 = +64$.",
+        "Le dénominateur est $2a$, ici $2 \\times (-2) = -4$, et pas $2 \\times 2$.",
+        "Oublier le coefficient $a$ devant la factorisation : $f(x) = (x+1)(x-4)$ est FAUX ici.",
+        "$x - (-1)$ devient $x + 1$ (moins par moins donne plus).",
+        "Penser que $\\Delta < 0$ signifie 'erreur de calcul' — non, c'est un résultat valide."
       ]
     }
   ]
