@@ -49,6 +49,7 @@ export default function RootLayout({
               Révisio
             </Link>
             <div className="flex items-center gap-1 sm:gap-3">
+              <NavLink href="/revision-express" label="🚀 Express" />
               <NavLink href="/programme" label="Programme" />
               <NavLink href="/reviser" label="Réviser" />
               <NavLink href="/annales" label="Annales" />
